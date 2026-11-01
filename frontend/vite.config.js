@@ -10,6 +10,11 @@ export default defineConfig({
     // Set API_PORT if 8000 is taken by another app, e.g.  API_PORT=8001 npm run dev
     proxy: { "/api": { target: `http://127.0.0.1:${process.env.API_PORT || 8000}`, changeOrigin: true } },
   },
+  // `vite preview` is what Render runs; it rejects unknown hosts unless listed here.
+  preview: {
+    host: "0.0.0.0",
+    allowedHosts: ["jobhunt-agent-1.onrender.com"],
+  },
   build: {
     // three.js (~900 kB) is lazy-loaded only for the 3D scenes, so its size doesn't block first paint.
     chunkSizeWarningLimit: 1000,

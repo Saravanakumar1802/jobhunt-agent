@@ -82,7 +82,11 @@ class TestProfiles:
         upd = await client.put(f"/api/profiles/{p['id']}", headers=headers, json={**PROFILE, "target_role": "AI Engineer"})
         assert upd.json()["target_role"] == "AI Engineer"
         assert (await client.delete(f"/api/profiles/{p['id']}", headers=headers)).status_code == 204
-        assert "react" in (await client.get("/api/profiles/skills/suggestions")).json()
+        skills = (await client.get("/api/profiles/skills/suggestions")).json()
+        js = next(x for x in skills if x["name"] == "javascript")
+        assert {"js", "es6"} <= set(js["aliases"])
+        roles = (await client.get("/api/profiles/roles/suggestions")).json()
+        assert any(r["role"] == "SAP Security Consultant" and "sap security" in r["skills"] for r in roles)
 
 
 class TestSearchFlow:

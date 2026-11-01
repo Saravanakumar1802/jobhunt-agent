@@ -20,6 +20,12 @@ export const handlers = [
     }
     return HttpResponse.json({ access_token: "tok", user: { id: "u1", name: "Sam", email: body.email, is_admin: true } });
   }),
+  http.get("/api/profiles/skills/suggestions", () =>
+    HttpResponse.json([{ name: "react", aliases: ["reactjs"] }, { name: "javascript", aliases: ["js"] }]),
+  ),
+  http.get("/api/profiles/roles/suggestions", () =>
+    HttpResponse.json([{ role: "Full Stack Developer", category: "Software Development", skills: ["react"], aliases: [] }]),
+  ),
   http.get("/api/auth/me", () => HttpResponse.json({ id: "u1", name: "Sam", email: "s@x.io", is_admin: true })),
   http.post("/api/jobs/:id/outreach", () =>
     HttpResponse.json({ job_id: JOB.job.id, tone: "short", kind: "message", subject: "Hi", body: "Hello recruiter, I fit this role.", method: "llm", model: "groq/openai/gpt-oss-120b", cached: false }),

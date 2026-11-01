@@ -2,11 +2,12 @@
  * The search brief, in one composer: role, years and skills up front; filters and the
  * "about you" text fold out underneath. The parent saves the profile right before searching.
  */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { ArrowUp, ChevronDown, NotebookPen, SlidersHorizontal, Square, Trash2 } from "lucide-react";
 import SkillInput from "../profile/SkillInput";
+import RoleInput from "../profile/RoleInput";
 import FilterPanel from "../filters/FilterPanel";
-import { useDeleteProfile, useProfiles, useSkillSuggestions } from "../../hooks/queries";
+import { useDeleteProfile, useProfiles, useRoleSuggestions, useSkillSuggestions } from "../../hooks/queries";
 import { DEFAULT_FILTERS, describeFilters } from "../../utils/format";
 
 export const EMPTY_PROFILE = { name: "My profile", target_role: "", description: "", skills: [], years_experience: "" };
@@ -25,7 +26,8 @@ function Toggle({ open, onClick, icon: Icon, children, controls }) {
 
 export default function Composer({ form, onChange, selectedId, onSelect, filters, onFilters, onSubmit, onStop, running, busy }) {
   const { data: profiles = [] } = useProfiles();
-  const { data: suggestions = [] } = useSkillSuggestions();
+  const { data: skillCatalog = [] } = useSkillSuggestions();
+  const { data: roles = [] } = useRoleSuggestions();
   const del = useDeleteProfile();
   const initialised = useRef(false);
   const [panel, setPanel] = useState(null); // "filters" | "about" | null
@@ -39,6 +41,12 @@ export default function Composer({ form, onChange, selectedId, onSelect, filters
       onSelect(profiles[0].id, toForm(profiles[0]));
     }
   }, [profiles, onSelect, hasForm]);
+
+  // A role from the catalog (picked or typed in full) brings its usual skills as one-click suggestions.
+  const matchedRole = useMemo(() => {
+    const q = form.target_role.trim().toLowerCase();
+    return q ? roles.find((r) => r.role.toLowerCase() === q || r.aliases.some((a) => a.toLowerCase() === q)) : undefined;
+  }, [roles, form.target_role]);
 
   const set = (key) => (e) => onChange({ ...form, [key]: e?.target ? e.target.value : e });
   const changedFilters = Object.keys(DEFAULT_FILTERS).filter((k) => filters[k] !== DEFAULT_FILTERS[k]).length;
@@ -70,8 +78,8 @@ export default function Composer({ form, onChange, selectedId, onSelect, filters
         <div className="grid grid-cols-[1fr_5.5rem] gap-3 sm:grid-cols-[1fr_7rem]">
           <div>
             <label className="label" htmlFor="p-role">Role you want</label>
-            <input id="p-role" className="field font-semiwide py-3 text-lg font-semibold sm:text-xl" required
-              placeholder="MERN Stack Developer" value={form.target_role} onChange={set("target_role")} autoComplete="off" />
+            <RoleInput id="p-role" className="field font-semiwide py-3 text-lg font-semibold sm:text-xl" required
+              placeholder="MERN Stack Developer" roles={roles} value={form.target_role} onChange={set("target_role")} />
           </div>
           <div>
             <label className="label" htmlFor="p-years">Years</label>
@@ -80,7 +88,8 @@ export default function Composer({ form, onChange, selectedId, onSelect, filters
           </div>
         </div>
 
-        <SkillInput value={form.skills} onChange={set("skills")} suggestions={suggestions} />
+        <SkillInput value={form.skills} onChange={set("skills")} catalog={skillCatalog}
+          suggested={matchedRole?.skills} suggestedFor={matchedRole?.role} />
       </div>
 
       <div className="reveal" data-open={panel === "filters"} id="panel-filters">

@@ -3,7 +3,7 @@ from fastapi import APIRouter, Response
 from app.api.deps import DB, CurrentUser
 from app.repositories.profiles import ProfileRepo
 from app.schemas.profile import ProfileIn, ProfileOut
-from app.services.text.skills import known_skills
+from app.services.text.skills import role_catalog, skill_catalog
 
 router = APIRouter(prefix="/profiles", tags=["profiles"])
 
@@ -18,10 +18,16 @@ async def create_profile(body: ProfileIn, user: CurrentUser, db: DB):
     return await ProfileRepo(db).create(user["_id"], body)
 
 
-@router.get("/skills/suggestions", response_model=list[str])
-async def skill_suggestions():
-    """Canonical skill names for the skill-chip autocomplete."""
-    return known_skills()
+@router.get("/skills/suggestions")
+async def skill_suggestions() -> list[dict]:
+    """Every known skill with its aliases, for the skill-chip dropdown ("js" still finds javascript)."""
+    return skill_catalog()
+
+
+@router.get("/roles/suggestions")
+async def role_suggestions() -> list[dict]:
+    """Every IT role with the skills usually asked for it, for the role dropdown and one-click skill suggestions."""
+    return role_catalog()
 
 
 @router.get("/{profile_id}", response_model=ProfileOut)

@@ -10,29 +10,108 @@ from functools import lru_cache
 from pathlib import Path
 
 TAXONOMY_PATH = Path(__file__).resolve().parents[3] / "data" / "skills_taxonomy.json"
+ROLES_PATH = TAXONOMY_PATH.with_name("roles.json")
 
-# Composite skills imply their parts (a MERN developer knows MongoDB, Express, React, Node).
-IMPLIES = {
-    "mern": ["mongodb", "express", "react", "node.js", "javascript"],
-    "mean": ["mongodb", "express", "angular", "node.js", "javascript"],
-    # Frameworks imply the language and web basics every posting lists next to them. Without this a
-    # React/Node developer scored "missing javascript, html, css" on most full-stack jobs.
-    "react": ["javascript", "html", "css"],
-    "next.js": ["react"],
-    "redux": ["react"],
-    "angular": ["typescript", "javascript", "html", "css"],
-    "vue": ["javascript", "html", "css"],
-    "typescript": ["javascript"],
-    "node.js": ["javascript"],
-    "express": ["node.js", "rest api"],
-    "fastapi": ["python", "rest api"],
-    "django": ["python"],
-    "flask": ["python", "rest api"],
-    "tailwind": ["css"],
-    "sass": ["css"],
-    "postgresql": ["sql"],
-    "mysql": ["sql"],
+# parent skill → skills that imply it. Having the child means you have the parent: a React developer knows
+# JavaScript, HTML and CSS, so a posting asking for them must not count as "missing". Chains are followed
+# (redux → react → javascript). Every name must be in the taxonomy (tests check it).
+IMPLIED_BY = {
+    "javascript": ["mern", "mean", "react", "angular", "vue", "node.js", "typescript", "jquery", "nuxt.js", "lwc",
+                   "sapui5", "gatsby", "remix", "rxjs", "htmx", "next.js", "react native"],
+    "html": ["react", "angular", "vue", "wordpress", "nuxt.js", "webflow"],
+    "css": ["react", "angular", "vue", "tailwind", "sass", "bootstrap", "material ui", "styled-components",
+            "wordpress", "webflow"],
+    "typescript": ["angular", "nestjs"],
+    "react": ["mern", "next.js", "redux", "react native", "react query", "react router", "material ui", "gatsby",
+              "remix", "styled-components", "react testing library"],
+    "vue": ["nuxt.js", "pinia"],
+    "angular": ["mean", "ngrx"],
+    "node.js": ["mern", "mean", "express", "nestjs"],
+    "mongodb": ["mern", "mean"],
+    "express": ["mern", "mean"],
+    "rest api": ["express", "fastapi", "flask", "django", "spring boot", "asp.net core", "nestjs", "laravel",
+                 "ruby on rails", "swagger", "postman", "rest assured"],
+    "python": ["fastapi", "django", "flask", "pandas", "numpy", "scikit-learn", "pyspark", "pytest", "scrapy",
+               "streamlit", "jupyter"],
+    "java": ["spring boot", "hibernate", "spring cloud", "spring security", "spring mvc", "junit", "mockito",
+             "maven", "gradle", "jsp", "testng"],
+    "spring boot": ["spring cloud", "spring security"],
+    "c#": [".net", "asp.net core", "entity framework", "linq", "wpf", "blazor", "xamarin", ".net maui"],
+    ".net": ["asp.net core", "entity framework", "blazor", "wpf"],
+    "php": ["laravel", "symfony", "codeigniter", "wordpress", "magento", "drupal", "woocommerce"],
+    "ruby": ["ruby on rails"],
+    "kotlin": ["jetpack compose"],
+    "android": ["jetpack compose", "android studio"],
+    "swift": ["swiftui", "uikit"],
+    "ios": ["swiftui", "uikit", "xcode"],
+    "dart": ["flutter"],
+    "sql": ["postgresql", "mysql", "sql server", "oracle database", "pl/sql", "t-sql", "sqlite", "mariadb",
+            "snowflake", "bigquery", "redshift", "dbt", "stored procedures"],
+    "sql server": ["t-sql", "ssis", "ssrs", "ssas"],
+    "oracle database": ["pl/sql", "rac", "data guard"],
+    "data visualization": ["power bi", "tableau", "looker", "qlik", "microstrategy", "cognos", "d3.js", "chart.js"],
+    "data warehouse": ["snowflake", "bigquery", "redshift", "azure synapse", "teradata"],
+    "etl": ["informatica", "talend", "ssis", "azure data factory", "aws glue", "apache nifi"],
+    "spark": ["pyspark", "databricks"],
+    "machine learning": ["scikit-learn", "xgboost", "tensorflow", "pytorch", "keras", "mlops", "hugging face",
+                         "deep learning", "model deployment", "feature engineering"],
+    "deep learning": ["tensorflow", "pytorch", "keras", "cnn", "lstm", "transformers", "bert", "computer vision"],
+    "nlp": ["transformers", "bert", "spacy", "nltk", "sentiment analysis"],
+    "computer vision": ["opencv", "yolo", "object detection", "image processing"],
+    "generative ai": ["llm", "diffusion models", "gans"],
+    "llm": ["rag", "langchain", "langgraph", "llamaindex", "prompt engineering", "fine-tuning", "llm evaluation"],
+    "ai agents": ["langgraph", "mcp"],
+    "aws": ["ec2", "s3", "lambda", "rds", "vpc", "cloudfront", "eks", "ecs", "cloudformation", "aws sagemaker",
+            "aws glue", "redshift", "cloudwatch"],
+    "azure": ["azure devops", "azure functions", "aks", "azure active directory", "azure data factory",
+              "azure synapse", "azure machine learning", "bicep", "microsoft sentinel"],
+    "gcp": ["gke", "bigquery", "vertex ai"],
+    "docker": ["docker compose", "kubernetes"],
+    "kubernetes": ["helm", "argocd", "eks", "aks", "gke", "istio", "openshift", "kubeflow"],
+    "ci/cd": ["jenkins", "github actions", "gitlab ci", "azure devops", "circleci", "teamcity", "argocd"],
+    "git": ["github actions", "gitlab ci", "gitops"],
+    "infrastructure as code": ["terraform", "ansible", "cloudformation", "pulumi", "bicep", "puppet",
+                               "chef automation"],
+    "linux": ["linux administration", "red hat", "kali linux", "bash", "linux kernel"],
+    "networking": ["tcp/ip", "cisco", "ccna", "ccnp", "juniper", "bgp", "ospf", "mpls", "wireshark", "dns", "dhcp",
+                   "vpn", "firewalls", "sd-wan", "nmap"],
+    "observability": ["prometheus", "grafana", "datadog", "new relic", "elk stack", "opentelemetry", "dynatrace",
+                      "appdynamics", "cloudwatch", "nagios", "zabbix"],
+    "unit testing": ["junit", "pytest", "jest", "mocha", "jasmine", "vitest", "mockito", "react testing library"],
+    "test automation": ["selenium", "cypress", "playwright", "appium", "testng", "cucumber", "robot framework",
+                        "puppeteer"],
+    "performance testing": ["jmeter", "loadrunner", "k6"],
+    "siem": ["splunk", "qradar", "microsoft sentinel"],
+    "edr": ["crowdstrike"],
+    "identity and access management": ["okta", "sailpoint", "privileged access management", "azure active directory",
+                                       "keycloak", "auth0", "sso", "ldap"],
+    "penetration testing": ["burp suite", "metasploit", "red teaming"],
+    "application security": ["owasp", "secure coding", "sast/dast", "threat modeling"],
+    "cybersecurity": ["iso 27001", "siem", "incident response", "penetration testing", "network security",
+                      "vulnerability assessment", "cloud security", "application security"],
+    "salesforce": ["salesforce apex", "lwc", "soql", "visualforce", "sales cloud", "service cloud",
+                   "salesforce administration", "salesforce cpq", "salesforce marketing cloud"],
+    "power platform": ["power apps", "power automate"],
+    "rpa": ["uipath", "automation anywhere", "blue prism"],
+    "mainframe": ["cobol", "jcl", "cics", "vsam"],
+    "sap": ["abap", "sapui5", "sap s/4hana", "sap fico", "sap fi", "sap co", "sap mm", "sap sd", "sap pp",
+            "sap qm", "sap pm", "sap ewm", "sap wm", "sap tm", "sap ps", "sap hcm", "sap successfactors", "sap ariba",
+            "sap fiori", "sap hana", "sap basis", "sap bw", "sap businessobjects", "sap analytics cloud", "sap btp",
+            "sap cpi", "sap pi/po", "sap cap", "sap rap", "sap security", "sap grc", "sap solution manager",
+            "sap crm", "sap scm", "sap ibp", "sap mdg", "sap commerce cloud", "sap bpc", "sap slt", "sap is-u",
+            "sap netweaver", "sap business one", "sap data migration"],
+    "sap fi": ["sap fico"],
+    "sap co": ["sap fico"],
+    "abap": ["abap on hana", "alv reports", "smartforms", "bapi", "badi", "idoc", "sap rap"],
+    "scrum": ["scaled agile framework"],
+    "agile": ["scrum", "kanban", "scaled agile framework"],
+    "ux design": ["ui design", "wireframing", "prototyping", "figma", "adobe xd", "interaction design"],
 }
+
+IMPLIES: dict[str, list[str]] = {}
+for _parent, _children in IMPLIED_BY.items():
+    for _child in _children:
+        IMPLIES.setdefault(_child, []).append(_parent)
 
 
 @lru_cache
@@ -66,6 +145,19 @@ def known_skills() -> list[str]:
     return sorted(_taxonomy())
 
 
+def skill_catalog() -> list[dict]:
+    """[{name, aliases}] for the skill dropdown: typing "js" or "reactjs" can still suggest the canonical name.
+
+    Kept in file order, which lists the most common skills first; the dropdown breaks ties with it."""
+    return [{"name": name, "aliases": [a for a in aliases if a != name]} for name, aliases in _taxonomy().items()]
+
+
+@lru_cache
+def role_catalog() -> list[dict]:
+    """[{role, category, skills, aliases}] — every IT role with the skills usually asked for it."""
+    return json.loads(ROLES_PATH.read_text(encoding="utf-8"))
+
+
 def canonical(skill: str) -> str:
     """Canonical name for a known skill, else the cleaned lower-case input."""
     cleaned = re.sub(r"\s+", " ", skill.strip().lower())
@@ -95,6 +187,8 @@ def expand_implied(skills: list[str] | set[str]) -> set[str]:
             if implied not in out:
                 out.add(implied)
                 pending.append(implied)
+    if any(s.startswith("sap ") for s in out):  # any SAP module implies SAP itself
+        out.add("sap")
     return out
 
 

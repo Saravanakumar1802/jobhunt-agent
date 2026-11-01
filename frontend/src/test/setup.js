@@ -15,6 +15,7 @@ if (!HTMLDialogElement.prototype.showModal) {
     this.dispatchEvent(new Event("close"));
   };
 }
+Element.prototype.scrollIntoView ??= function () {};
 window.matchMedia ??= (query) => ({
   matches: false, media: query, addEventListener() {}, removeEventListener() {}, addListener() {}, removeListener() {},
 });

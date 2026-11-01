@@ -1,0 +1,3267 @@
+[
+ {
+  "role": "Full Stack Developer",
+  "category": "Software Development",
+  "skills": [
+   "javascript",
+   "typescript",
+   "react",
+   "node.js",
+   "express",
+   "mongodb",
+   "postgresql",
+   "rest api",
+   "html",
+   "css",
+   "git",
+   "docker",
+   "aws"
+  ],
+  "aliases": [
+   "full-stack developer",
+   "fullstack developer",
+   "full stack engineer"
+  ]
+ },
+ {
+  "role": "MERN Stack Developer",
+  "category": "Software Development",
+  "skills": [
+   "mern",
+   "mongodb",
+   "express",
+   "react",
+   "node.js",
+   "javascript",
+   "redux",
+   "rest api",
+   "jwt",
+   "git",
+   "html",
+   "css"
+  ],
+  "aliases": [
+   "mern developer"
+  ]
+ },
+ {
+  "role": "MEAN Stack Developer",
+  "category": "Software Development",
+  "skills": [
+   "mean",
+   "mongodb",
+   "express",
+   "angular",
+   "node.js",
+   "typescript",
+   "rxjs",
+   "rest api",
+   "git"
+  ],
+  "aliases": [
+   "mean developer"
+  ]
+ },
+ {
+  "role": "Java Full Stack Developer",
+  "category": "Software Development",
+  "skills": [
+   "java",
+   "spring boot",
+   "hibernate",
+   "microservices",
+   "rest api",
+   "mysql",
+   "angular",
+   "react",
+   "javascript",
+   "html",
+   "css",
+   "junit",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Python Full Stack Developer",
+  "category": "Software Development",
+  "skills": [
+   "python",
+   "django",
+   "flask",
+   "react",
+   "javascript",
+   "postgresql",
+   "rest api",
+   "html",
+   "css",
+   "docker",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Frontend Developer",
+  "category": "Software Development",
+  "skills": [
+   "html",
+   "css",
+   "javascript",
+   "typescript",
+   "react",
+   "redux",
+   "next.js",
+   "tailwind",
+   "responsive design",
+   "webpack",
+   "vite",
+   "jest",
+   "web accessibility",
+   "git"
+  ],
+  "aliases": [
+   "front end developer",
+   "front-end developer",
+   "ui developer"
+  ]
+ },
+ {
+  "role": "React Developer",
+  "category": "Software Development",
+  "skills": [
+   "react",
+   "javascript",
+   "typescript",
+   "redux",
+   "next.js",
+   "react query",
+   "react router",
+   "tailwind",
+   "jest",
+   "react testing library",
+   "rest api",
+   "html",
+   "css",
+   "git"
+  ],
+  "aliases": [
+   "reactjs developer"
+  ]
+ },
+ {
+  "role": "Angular Developer",
+  "category": "Software Development",
+  "skills": [
+   "angular",
+   "typescript",
+   "javascript",
+   "rxjs",
+   "ngrx",
+   "html",
+   "css",
+   "rest api",
+   "jasmine",
+   "git"
+  ],
+  "aliases": [
+   "angularjs developer"
+  ]
+ },
+ {
+  "role": "Vue.js Developer",
+  "category": "Software Development",
+  "skills": [
+   "vue",
+   "javascript",
+   "typescript",
+   "nuxt.js",
+   "pinia",
+   "html",
+   "css",
+   "rest api",
+   "vite",
+   "git"
+  ],
+  "aliases": [
+   "vuejs developer"
+  ]
+ },
+ {
+  "role": "Next.js Developer",
+  "category": "Software Development",
+  "skills": [
+   "next.js",
+   "react",
+   "typescript",
+   "javascript",
+   "tailwind",
+   "rest api",
+   "graphql",
+   "vercel",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "UI Developer",
+  "category": "Software Development",
+  "skills": [
+   "html",
+   "css",
+   "javascript",
+   "react",
+   "sass",
+   "bootstrap",
+   "responsive design",
+   "figma",
+   "web accessibility",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Backend Developer",
+  "category": "Software Development",
+  "skills": [
+   "rest api",
+   "sql",
+   "postgresql",
+   "redis",
+   "microservices",
+   "docker",
+   "git",
+   "system design",
+   "unit testing",
+   "ci/cd",
+   "message queues",
+   "node.js",
+   "python",
+   "java"
+  ],
+  "aliases": [
+   "back end developer",
+   "back-end developer"
+  ]
+ },
+ {
+  "role": "Node.js Developer",
+  "category": "Software Development",
+  "skills": [
+   "node.js",
+   "express",
+   "nestjs",
+   "typescript",
+   "javascript",
+   "mongodb",
+   "postgresql",
+   "rest api",
+   "graphql",
+   "redis",
+   "jest",
+   "docker"
+  ],
+  "aliases": [
+   "nodejs developer"
+  ]
+ },
+ {
+  "role": "Python Developer",
+  "category": "Software Development",
+  "skills": [
+   "python",
+   "django",
+   "flask",
+   "fastapi",
+   "sqlalchemy",
+   "postgresql",
+   "rest api",
+   "pytest",
+   "celery",
+   "asyncio",
+   "docker",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Django Developer",
+  "category": "Software Development",
+  "skills": [
+   "django",
+   "python",
+   "postgresql",
+   "rest api",
+   "celery",
+   "redis",
+   "docker",
+   "pytest",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "FastAPI Developer",
+  "category": "Software Development",
+  "skills": [
+   "fastapi",
+   "python",
+   "pydantic",
+   "asyncio",
+   "postgresql",
+   "sqlalchemy",
+   "rest api",
+   "docker",
+   "pytest",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Java Developer",
+  "category": "Software Development",
+  "skills": [
+   "java",
+   "spring boot",
+   "hibernate",
+   "microservices",
+   "rest api",
+   "mysql",
+   "junit",
+   "maven",
+   "kafka",
+   "docker",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Spring Boot Developer",
+  "category": "Software Development",
+  "skills": [
+   "spring boot",
+   "java",
+   "spring security",
+   "hibernate",
+   "microservices",
+   "rest api",
+   "mysql",
+   "junit",
+   "maven",
+   "docker"
+  ],
+  "aliases": []
+ },
+ {
+  "role": ".NET Developer",
+  "category": "Software Development",
+  "skills": [
+   ".net",
+   "c#",
+   "asp.net core",
+   "entity framework",
+   "sql server",
+   "linq",
+   "rest api",
+   "azure",
+   "angular",
+   "unit testing",
+   "git"
+  ],
+  "aliases": [
+   "dotnet developer"
+  ]
+ },
+ {
+  "role": "C# Developer",
+  "category": "Software Development",
+  "skills": [
+   "c#",
+   ".net",
+   "asp.net core",
+   "entity framework",
+   "sql server",
+   "linq",
+   "wpf",
+   "azure",
+   "unit testing",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "PHP Developer",
+  "category": "Software Development",
+  "skills": [
+   "php",
+   "laravel",
+   "mysql",
+   "rest api",
+   "html",
+   "css",
+   "javascript",
+   "symfony",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Laravel Developer",
+  "category": "Software Development",
+  "skills": [
+   "laravel",
+   "php",
+   "mysql",
+   "rest api",
+   "vue",
+   "javascript",
+   "git",
+   "docker"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "WordPress Developer",
+  "category": "Software Development",
+  "skills": [
+   "wordpress",
+   "php",
+   "mysql",
+   "html",
+   "css",
+   "javascript",
+   "woocommerce",
+   "seo",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Shopify Developer",
+  "category": "Software Development",
+  "skills": [
+   "shopify",
+   "javascript",
+   "html",
+   "css",
+   "rest api",
+   "graphql",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Ruby on Rails Developer",
+  "category": "Software Development",
+  "skills": [
+   "ruby on rails",
+   "ruby",
+   "postgresql",
+   "rest api",
+   "redis",
+   "git",
+   "docker"
+  ],
+  "aliases": [
+   "rails developer"
+  ]
+ },
+ {
+  "role": "Golang Developer",
+  "category": "Software Development",
+  "skills": [
+   "golang",
+   "grpc",
+   "rest api",
+   "microservices",
+   "postgresql",
+   "redis",
+   "kafka",
+   "docker",
+   "kubernetes"
+  ],
+  "aliases": [
+   "go developer"
+  ]
+ },
+ {
+  "role": "C++ Developer",
+  "category": "Software Development",
+  "skills": [
+   "c++",
+   "data structures",
+   "algorithms",
+   "multithreading",
+   "linux",
+   "design patterns",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Rust Developer",
+  "category": "Software Development",
+  "skills": [
+   "rust",
+   "multithreading",
+   "linux",
+   "webassembly",
+   "git",
+   "algorithms"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Software Engineer",
+  "category": "Software Development",
+  "skills": [
+   "data structures",
+   "algorithms",
+   "system design",
+   "oop",
+   "design patterns",
+   "git",
+   "rest api",
+   "sql",
+   "unit testing",
+   "ci/cd"
+  ],
+  "aliases": [
+   "software developer",
+   "sde",
+   "software development engineer"
+  ]
+ },
+ {
+  "role": "Senior Software Engineer",
+  "category": "Software Development",
+  "skills": [
+   "system design",
+   "microservices",
+   "distributed systems",
+   "design patterns",
+   "api design",
+   "code review",
+   "ci/cd",
+   "aws",
+   "docker",
+   "sql"
+  ],
+  "aliases": [
+   "senior software developer",
+   "sde 2"
+  ]
+ },
+ {
+  "role": "API Developer",
+  "category": "Software Development",
+  "skills": [
+   "rest api",
+   "graphql",
+   "api design",
+   "swagger",
+   "postman",
+   "oauth",
+   "node.js",
+   "java",
+   "api gateway"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Salesforce Developer",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "salesforce",
+   "salesforce apex",
+   "lwc",
+   "soql",
+   "visualforce",
+   "javascript",
+   "rest api",
+   "mulesoft",
+   "git"
+  ],
+  "aliases": [
+   "sfdc developer"
+  ]
+ },
+ {
+  "role": "Mobile App Developer",
+  "category": "Mobile & Game",
+  "skills": [
+   "flutter",
+   "react native",
+   "android",
+   "ios",
+   "firebase",
+   "rest api",
+   "dart",
+   "git"
+  ],
+  "aliases": [
+   "mobile developer"
+  ]
+ },
+ {
+  "role": "Android Developer",
+  "category": "Mobile & Game",
+  "skills": [
+   "android",
+   "kotlin",
+   "java",
+   "jetpack compose",
+   "android studio",
+   "rest api",
+   "firebase",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "iOS Developer",
+  "category": "Mobile & Game",
+  "skills": [
+   "ios",
+   "swift",
+   "swiftui",
+   "uikit",
+   "xcode",
+   "objective-c",
+   "rest api",
+   "firebase",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Flutter Developer",
+  "category": "Mobile & Game",
+  "skills": [
+   "flutter",
+   "dart",
+   "firebase",
+   "rest api",
+   "android",
+   "ios",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "React Native Developer",
+  "category": "Mobile & Game",
+  "skills": [
+   "react native",
+   "javascript",
+   "typescript",
+   "redux",
+   "android",
+   "ios",
+   "firebase",
+   "rest api"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Game Developer",
+  "category": "Mobile & Game",
+  "skills": [
+   "unity 3d",
+   "c#",
+   "unreal engine",
+   "c++",
+   "game development",
+   "opengl",
+   "shaders",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Unity Developer",
+  "category": "Mobile & Game",
+  "skills": [
+   "unity 3d",
+   "c#",
+   "game development",
+   "shaders",
+   "git",
+   "android",
+   "ios"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "AR/VR Developer",
+  "category": "Mobile & Game",
+  "skills": [
+   "ar/vr",
+   "unity 3d",
+   "c#",
+   "unreal engine",
+   "opengl",
+   "blender"
+  ],
+  "aliases": [
+   "xr developer"
+  ]
+ },
+ {
+  "role": "Blockchain Developer",
+  "category": "Mobile & Game",
+  "skills": [
+   "blockchain",
+   "solidity",
+   "ethereum",
+   "smart contracts",
+   "web3",
+   "javascript",
+   "node.js",
+   "hyperledger"
+  ],
+  "aliases": [
+   "web3 developer"
+  ]
+ },
+ {
+  "role": "Embedded Software Engineer",
+  "category": "Embedded & IoT",
+  "skills": [
+   "embedded c",
+   "c",
+   "c++",
+   "rtos",
+   "microcontrollers",
+   "i2c/spi/uart",
+   "linux",
+   "firmware",
+   "can bus",
+   "git"
+  ],
+  "aliases": [
+   "embedded engineer"
+  ]
+ },
+ {
+  "role": "Firmware Engineer",
+  "category": "Embedded & IoT",
+  "skills": [
+   "firmware",
+   "embedded c",
+   "c",
+   "rtos",
+   "microcontrollers",
+   "i2c/spi/uart",
+   "can bus",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Embedded Linux Engineer",
+  "category": "Embedded & IoT",
+  "skills": [
+   "embedded systems",
+   "linux kernel",
+   "yocto",
+   "c",
+   "c++",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "IoT Engineer",
+  "category": "Embedded & IoT",
+  "skills": [
+   "iot",
+   "mqtt",
+   "raspberry pi",
+   "arduino",
+   "esp32",
+   "embedded c",
+   "python",
+   "aws",
+   "bluetooth low energy"
+  ],
+  "aliases": [
+   "iot developer"
+  ]
+ },
+ {
+  "role": "Robotics Engineer",
+  "category": "Embedded & IoT",
+  "skills": [
+   "robotics",
+   "ros",
+   "python",
+   "c++",
+   "opencv",
+   "computer vision",
+   "linux"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "VLSI Engineer",
+  "category": "Embedded & IoT",
+  "skills": [
+   "vlsi",
+   "verilog",
+   "systemverilog",
+   "vhdl",
+   "fpga",
+   "linux",
+   "python"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "FPGA Engineer",
+  "category": "Embedded & IoT",
+  "skills": [
+   "fpga",
+   "vhdl",
+   "verilog",
+   "systemverilog",
+   "python"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "PCB Design Engineer",
+  "category": "Embedded & IoT",
+  "skills": [
+   "pcb design",
+   "embedded systems",
+   "microcontrollers"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Automotive Embedded Engineer",
+  "category": "Embedded & IoT",
+  "skills": [
+   "autosar",
+   "embedded c",
+   "can bus",
+   "rtos",
+   "c",
+   "c++",
+   "simulink"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "DevOps Engineer",
+  "category": "Cloud & DevOps",
+  "skills": [
+   "docker",
+   "kubernetes",
+   "ci/cd",
+   "jenkins",
+   "terraform",
+   "ansible",
+   "aws",
+   "linux",
+   "git",
+   "bash",
+   "prometheus",
+   "grafana",
+   "github actions"
+  ],
+  "aliases": [
+   "devops"
+  ]
+ },
+ {
+  "role": "Senior DevOps Engineer",
+  "category": "Cloud & DevOps",
+  "skills": [
+   "kubernetes",
+   "terraform",
+   "aws",
+   "ci/cd",
+   "gitops",
+   "argocd",
+   "helm",
+   "prometheus",
+   "grafana",
+   "python",
+   "linux",
+   "devsecops"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Site Reliability Engineer",
+  "category": "Cloud & DevOps",
+  "skills": [
+   "sre",
+   "kubernetes",
+   "prometheus",
+   "grafana",
+   "python",
+   "linux",
+   "terraform",
+   "incident management",
+   "observability",
+   "aws",
+   "chaos engineering"
+  ],
+  "aliases": [
+   "sre"
+  ]
+ },
+ {
+  "role": "Platform Engineer",
+  "category": "Cloud & DevOps",
+  "skills": [
+   "kubernetes",
+   "terraform",
+   "helm",
+   "argocd",
+   "gitops",
+   "aws",
+   "docker",
+   "python",
+   "ci/cd"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Cloud Engineer",
+  "category": "Cloud & DevOps",
+  "skills": [
+   "aws",
+   "azure",
+   "gcp",
+   "terraform",
+   "linux",
+   "docker",
+   "kubernetes",
+   "networking",
+   "python",
+   "identity and access management"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "AWS Cloud Engineer",
+  "category": "Cloud & DevOps",
+  "skills": [
+   "aws",
+   "ec2",
+   "s3",
+   "lambda",
+   "vpc",
+   "identity and access management",
+   "cloudformation",
+   "terraform",
+   "rds",
+   "eks",
+   "docker",
+   "python"
+  ],
+  "aliases": [
+   "aws engineer"
+  ]
+ },
+ {
+  "role": "Azure Cloud Engineer",
+  "category": "Cloud & DevOps",
+  "skills": [
+   "azure",
+   "azure devops",
+   "azure active directory",
+   "bicep",
+   "terraform",
+   "powershell",
+   "aks",
+   "azure functions"
+  ],
+  "aliases": [
+   "azure engineer"
+  ]
+ },
+ {
+  "role": "GCP Cloud Engineer",
+  "category": "Cloud & DevOps",
+  "skills": [
+   "gcp",
+   "gke",
+   "bigquery",
+   "terraform",
+   "kubernetes",
+   "python",
+   "networking"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Cloud Architect",
+  "category": "Cloud & DevOps",
+  "skills": [
+   "aws",
+   "azure",
+   "system design",
+   "microservices",
+   "terraform",
+   "networking",
+   "cloud security",
+   "disaster recovery",
+   "kubernetes"
+  ],
+  "aliases": [
+   "solutions architect",
+   "aws solutions architect"
+  ]
+ },
+ {
+  "role": "Kubernetes Administrator",
+  "category": "Cloud & DevOps",
+  "skills": [
+   "kubernetes",
+   "docker",
+   "helm",
+   "linux",
+   "prometheus",
+   "grafana",
+   "istio",
+   "terraform",
+   "argocd"
+  ],
+  "aliases": [
+   "k8s engineer"
+  ]
+ },
+ {
+  "role": "Release Engineer",
+  "category": "Cloud & DevOps",
+  "skills": [
+   "ci/cd",
+   "jenkins",
+   "git",
+   "maven",
+   "bash",
+   "release management",
+   "docker",
+   "sonarqube"
+  ],
+  "aliases": [
+   "build and release engineer",
+   "build engineer"
+  ]
+ },
+ {
+  "role": "DevSecOps Engineer",
+  "category": "Cloud & DevOps",
+  "skills": [
+   "devsecops",
+   "ci/cd",
+   "docker",
+   "kubernetes",
+   "sonarqube",
+   "hashicorp vault",
+   "terraform",
+   "owasp",
+   "sast/dast",
+   "aws"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Infrastructure Engineer",
+  "category": "Cloud & DevOps",
+  "skills": [
+   "linux",
+   "terraform",
+   "ansible",
+   "vmware",
+   "networking",
+   "aws",
+   "bash",
+   "observability"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "System Administrator",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "linux administration",
+   "windows server",
+   "active directory",
+   "vmware",
+   "bash",
+   "powershell",
+   "networking",
+   "backup and recovery",
+   "dns",
+   "group policy"
+  ],
+  "aliases": [
+   "sysadmin",
+   "systems administrator"
+  ]
+ },
+ {
+  "role": "Linux Administrator",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "linux administration",
+   "red hat",
+   "bash",
+   "nginx",
+   "apache httpd",
+   "ansible",
+   "networking",
+   "backup and recovery"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Windows Administrator",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "windows server",
+   "active directory",
+   "group policy",
+   "powershell",
+   "microsoft 365",
+   "vmware",
+   "dns",
+   "dhcp"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Network Engineer",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "networking",
+   "cisco",
+   "ccna",
+   "tcp/ip",
+   "bgp",
+   "ospf",
+   "firewalls",
+   "vpn",
+   "juniper",
+   "wireshark",
+   "sd-wan"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Network Security Engineer",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "firewalls",
+   "palo alto",
+   "fortinet",
+   "vpn",
+   "network security",
+   "cisco",
+   "siem",
+   "zero trust"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Database Administrator",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "database administration",
+   "oracle database",
+   "sql server",
+   "mysql",
+   "postgresql",
+   "backup and recovery",
+   "query optimization",
+   "pl/sql",
+   "performance tuning"
+  ],
+  "aliases": [
+   "dba"
+  ]
+ },
+ {
+  "role": "Oracle DBA",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "oracle database",
+   "rac",
+   "data guard",
+   "backup and recovery",
+   "pl/sql",
+   "linux",
+   "performance tuning"
+  ],
+  "aliases": [
+   "oracle database administrator"
+  ]
+ },
+ {
+  "role": "SQL Server DBA",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "sql server",
+   "t-sql",
+   "ssis",
+   "ssrs",
+   "backup and recovery",
+   "query optimization",
+   "performance tuning"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "IT Support Engineer",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "technical support",
+   "troubleshooting",
+   "active directory",
+   "microsoft 365",
+   "hardware troubleshooting",
+   "itil",
+   "service desk",
+   "networking"
+  ],
+  "aliases": [
+   "it support",
+   "technical support engineer"
+  ]
+ },
+ {
+  "role": "Service Desk Analyst",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "service desk",
+   "itil",
+   "servicenow",
+   "active directory",
+   "troubleshooting",
+   "microsoft 365",
+   "technical support"
+  ],
+  "aliases": [
+   "help desk analyst"
+  ]
+ },
+ {
+  "role": "Desktop Support Engineer",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "desktop support",
+   "hardware troubleshooting",
+   "active directory",
+   "windows server",
+   "microsoft office",
+   "troubleshooting"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Application Support Engineer",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "technical support",
+   "sql",
+   "linux",
+   "itil",
+   "incident management",
+   "splunk",
+   "servicenow",
+   "troubleshooting"
+  ],
+  "aliases": [
+   "production support engineer"
+  ]
+ },
+ {
+  "role": "NOC Engineer",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "networking",
+   "network monitoring",
+   "incident management",
+   "cisco",
+   "tcp/ip",
+   "itil",
+   "zabbix",
+   "nagios"
+  ],
+  "aliases": [
+   "network operations engineer"
+  ]
+ },
+ {
+  "role": "ITSM Analyst",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "itsm",
+   "itil",
+   "servicenow",
+   "incident management",
+   "change management",
+   "jira"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Virtualization Engineer",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "vmware",
+   "hyper-v",
+   "virtualization",
+   "citrix",
+   "windows server",
+   "backup and recovery",
+   "powershell"
+  ],
+  "aliases": [
+   "vmware administrator"
+  ]
+ },
+ {
+  "role": "Backup Administrator",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "backup and recovery",
+   "veeam",
+   "disaster recovery",
+   "windows server",
+   "linux"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Middleware Administrator",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "tomcat",
+   "apache httpd",
+   "nginx",
+   "linux",
+   "java",
+   "bash"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Microsoft 365 Administrator",
+  "category": "IT Infrastructure & Support",
+  "skills": [
+   "microsoft 365",
+   "azure active directory",
+   "exchange online",
+   "intune",
+   "powershell",
+   "sharepoint",
+   "mfa"
+  ],
+  "aliases": [
+   "office 365 administrator"
+  ]
+ },
+ {
+  "role": "Data Analyst",
+  "category": "Data & Analytics",
+  "skills": [
+   "sql",
+   "ms excel",
+   "power bi",
+   "tableau",
+   "python",
+   "pandas",
+   "data visualization",
+   "statistics",
+   "data cleaning",
+   "data analysis",
+   "a/b testing"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Senior Data Analyst",
+  "category": "Data & Analytics",
+  "skills": [
+   "sql",
+   "python",
+   "power bi",
+   "tableau",
+   "data visualization",
+   "statistics",
+   "a/b testing",
+   "database design",
+   "data analysis"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Business Intelligence Developer",
+  "category": "Data & Analytics",
+  "skills": [
+   "power bi",
+   "dax",
+   "sql",
+   "ssis",
+   "ssrs",
+   "etl",
+   "data warehouse",
+   "tableau",
+   "database design",
+   "power query"
+  ],
+  "aliases": [
+   "bi developer"
+  ]
+ },
+ {
+  "role": "BI Analyst",
+  "category": "Data & Analytics",
+  "skills": [
+   "power bi",
+   "tableau",
+   "sql",
+   "ms excel",
+   "data visualization",
+   "business intelligence",
+   "data analysis"
+  ],
+  "aliases": [
+   "business intelligence analyst"
+  ]
+ },
+ {
+  "role": "Power BI Developer",
+  "category": "Data & Analytics",
+  "skills": [
+   "power bi",
+   "dax",
+   "power query",
+   "sql",
+   "database design",
+   "ms excel",
+   "data visualization",
+   "sql server"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Tableau Developer",
+  "category": "Data & Analytics",
+  "skills": [
+   "tableau",
+   "sql",
+   "data visualization",
+   "database design",
+   "ms excel",
+   "data analysis"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Product Analyst",
+  "category": "Data & Analytics",
+  "skills": [
+   "sql",
+   "a/b testing",
+   "google analytics",
+   "python",
+   "tableau",
+   "ms excel",
+   "statistics",
+   "data analysis"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Data Scientist",
+  "category": "Data & Analytics",
+  "skills": [
+   "python",
+   "machine learning",
+   "statistics",
+   "pandas",
+   "numpy",
+   "scikit-learn",
+   "sql",
+   "deep learning",
+   "data visualization",
+   "feature engineering",
+   "jupyter",
+   "pytorch"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Senior Data Scientist",
+  "category": "Data & Analytics",
+  "skills": [
+   "python",
+   "machine learning",
+   "deep learning",
+   "statistics",
+   "sql",
+   "feature engineering",
+   "model deployment",
+   "mlops",
+   "pytorch",
+   "aws"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Data Engineer",
+  "category": "Data & Analytics",
+  "skills": [
+   "python",
+   "sql",
+   "spark",
+   "pyspark",
+   "airflow",
+   "kafka",
+   "etl",
+   "data warehouse",
+   "snowflake",
+   "aws glue",
+   "dbt",
+   "data pipelines",
+   "databricks"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Big Data Engineer",
+  "category": "Data & Analytics",
+  "skills": [
+   "hadoop",
+   "spark",
+   "hive",
+   "kafka",
+   "scala",
+   "hbase",
+   "pyspark",
+   "sql",
+   "apache flink",
+   "data lake"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Analytics Engineer",
+  "category": "Data & Analytics",
+  "skills": [
+   "dbt",
+   "sql",
+   "snowflake",
+   "database design",
+   "bigquery",
+   "looker",
+   "airflow",
+   "python",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "ETL Developer",
+  "category": "Data & Analytics",
+  "skills": [
+   "etl",
+   "informatica",
+   "talend",
+   "ssis",
+   "sql",
+   "pl/sql",
+   "data warehouse",
+   "unix",
+   "oracle database",
+   "azure data factory"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Azure Data Engineer",
+  "category": "Data & Analytics",
+  "skills": [
+   "azure data factory",
+   "databricks",
+   "azure synapse",
+   "pyspark",
+   "sql",
+   "azure",
+   "delta lake",
+   "python",
+   "etl"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "AWS Data Engineer",
+  "category": "Data & Analytics",
+  "skills": [
+   "aws",
+   "aws glue",
+   "redshift",
+   "s3",
+   "pyspark",
+   "airflow",
+   "python",
+   "sql",
+   "kafka",
+   "data lake"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Data Architect",
+  "category": "Data & Analytics",
+  "skills": [
+   "database design",
+   "data warehouse",
+   "data lake",
+   "snowflake",
+   "sql",
+   "etl",
+   "data governance",
+   "aws",
+   "azure",
+   "master data management"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Quantitative Analyst",
+  "category": "Data & Analytics",
+  "skills": [
+   "python",
+   "statistics",
+   "c++",
+   "time series",
+   "regression analysis",
+   "sql",
+   "machine learning"
+  ],
+  "aliases": [
+   "quant"
+  ]
+ },
+ {
+  "role": "Business Analyst",
+  "category": "Data & Analytics",
+  "skills": [
+   "business analysis",
+   "requirements gathering",
+   "sql",
+   "ms excel",
+   "jira",
+   "uml",
+   "user stories",
+   "agile",
+   "stakeholder management",
+   "power bi"
+  ],
+  "aliases": [
+   "ba",
+   "it business analyst"
+  ]
+ },
+ {
+  "role": "Data Governance Analyst",
+  "category": "Data & Analytics",
+  "skills": [
+   "data governance",
+   "data quality",
+   "master data management",
+   "sql",
+   "database design"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Machine Learning Engineer",
+  "category": "AI & Machine Learning",
+  "skills": [
+   "python",
+   "machine learning",
+   "pytorch",
+   "tensorflow",
+   "mlops",
+   "docker",
+   "aws sagemaker",
+   "scikit-learn",
+   "model deployment",
+   "kubernetes",
+   "sql"
+  ],
+  "aliases": [
+   "ml engineer"
+  ]
+ },
+ {
+  "role": "AI Engineer",
+  "category": "AI & Machine Learning",
+  "skills": [
+   "python",
+   "machine learning",
+   "deep learning",
+   "llm",
+   "generative ai",
+   "langchain",
+   "rag",
+   "prompt engineering",
+   "fastapi",
+   "vector databases",
+   "openai api",
+   "docker"
+  ],
+  "aliases": [
+   "artificial intelligence engineer",
+   "ai developer"
+  ]
+ },
+ {
+  "role": "Generative AI Engineer",
+  "category": "AI & Machine Learning",
+  "skills": [
+   "generative ai",
+   "llm",
+   "rag",
+   "langchain",
+   "langgraph",
+   "prompt engineering",
+   "fine-tuning",
+   "hugging face",
+   "vector databases",
+   "embeddings",
+   "python",
+   "openai api"
+  ],
+  "aliases": [
+   "genai engineer",
+   "gen ai engineer"
+  ]
+ },
+ {
+  "role": "LLM Engineer",
+  "category": "AI & Machine Learning",
+  "skills": [
+   "llm",
+   "rag",
+   "fine-tuning",
+   "prompt engineering",
+   "hugging face",
+   "transformers",
+   "python",
+   "pytorch",
+   "llm evaluation"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "AI Agent Developer",
+  "category": "AI & Machine Learning",
+  "skills": [
+   "ai agents",
+   "langgraph",
+   "langchain",
+   "llm",
+   "mcp",
+   "python",
+   "fastapi",
+   "rag",
+   "prompt engineering"
+  ],
+  "aliases": [
+   "agentic ai developer"
+  ]
+ },
+ {
+  "role": "Prompt Engineer",
+  "category": "AI & Machine Learning",
+  "skills": [
+   "prompt engineering",
+   "llm",
+   "generative ai",
+   "openai api",
+   "claude api",
+   "python",
+   "rag",
+   "llm evaluation"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Research Scientist",
+  "category": "AI & Machine Learning",
+  "skills": [
+   "deep learning",
+   "pytorch",
+   "machine learning",
+   "transformers",
+   "nlp",
+   "statistics",
+   "python",
+   "reinforcement learning",
+   "computer vision"
+  ],
+  "aliases": [
+   "ai researcher",
+   "ml researcher"
+  ]
+ },
+ {
+  "role": "NLP Engineer",
+  "category": "AI & Machine Learning",
+  "skills": [
+   "nlp",
+   "transformers",
+   "bert",
+   "spacy",
+   "nltk",
+   "hugging face",
+   "python",
+   "pytorch",
+   "sentiment analysis"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Computer Vision Engineer",
+  "category": "AI & Machine Learning",
+  "skills": [
+   "computer vision",
+   "opencv",
+   "pytorch",
+   "tensorflow",
+   "object detection",
+   "yolo",
+   "image processing",
+   "python",
+   "cnn",
+   "c++"
+  ],
+  "aliases": [
+   "cv engineer"
+  ]
+ },
+ {
+  "role": "MLOps Engineer",
+  "category": "AI & Machine Learning",
+  "skills": [
+   "mlops",
+   "mlflow",
+   "kubeflow",
+   "docker",
+   "kubernetes",
+   "airflow",
+   "ci/cd",
+   "python",
+   "aws sagemaker",
+   "terraform"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Deep Learning Engineer",
+  "category": "AI & Machine Learning",
+  "skills": [
+   "deep learning",
+   "pytorch",
+   "tensorflow",
+   "keras",
+   "cnn",
+   "lstm",
+   "transformers",
+   "python",
+   "cuda"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Data Annotation Specialist",
+  "category": "AI & Machine Learning",
+  "skills": [
+   "data annotation",
+   "data quality",
+   "python",
+   "machine learning"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Cybersecurity Analyst",
+  "category": "Cybersecurity",
+  "skills": [
+   "cybersecurity",
+   "siem",
+   "incident response",
+   "threat intelligence",
+   "network security",
+   "vulnerability assessment",
+   "splunk",
+   "firewalls",
+   "risk assessment",
+   "nist"
+  ],
+  "aliases": [
+   "security analyst",
+   "cyber security analyst"
+  ]
+ },
+ {
+  "role": "SOC Analyst",
+  "category": "Cybersecurity",
+  "skills": [
+   "security operations",
+   "siem",
+   "splunk",
+   "qradar",
+   "incident response",
+   "threat hunting",
+   "edr",
+   "crowdstrike",
+   "malware analysis"
+  ],
+  "aliases": [
+   "security operations center analyst"
+  ]
+ },
+ {
+  "role": "Information Security Analyst",
+  "category": "Cybersecurity",
+  "skills": [
+   "iso 27001",
+   "risk assessment",
+   "vulnerability assessment",
+   "grc",
+   "compliance",
+   "nist",
+   "siem"
+  ],
+  "aliases": [
+   "infosec analyst"
+  ]
+ },
+ {
+  "role": "Penetration Tester",
+  "category": "Cybersecurity",
+  "skills": [
+   "penetration testing",
+   "burp suite",
+   "metasploit",
+   "nmap",
+   "kali linux",
+   "owasp",
+   "vulnerability assessment",
+   "python",
+   "application security"
+  ],
+  "aliases": [
+   "pentester",
+   "ethical hacker",
+   "vapt analyst"
+  ]
+ },
+ {
+  "role": "Red Team Operator",
+  "category": "Cybersecurity",
+  "skills": [
+   "red teaming",
+   "penetration testing",
+   "metasploit",
+   "kali linux",
+   "python",
+   "powershell",
+   "active directory",
+   "reverse engineering"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Security Engineer",
+  "category": "Cybersecurity",
+  "skills": [
+   "cybersecurity",
+   "siem",
+   "aws",
+   "devsecops",
+   "firewalls",
+   "encryption",
+   "python",
+   "vulnerability assessment",
+   "identity and access management",
+   "zero trust"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Cloud Security Engineer",
+  "category": "Cybersecurity",
+  "skills": [
+   "cloud security",
+   "aws",
+   "azure",
+   "identity and access management",
+   "terraform",
+   "kubernetes",
+   "siem",
+   "zero trust",
+   "devsecops",
+   "encryption"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Application Security Engineer",
+  "category": "Cybersecurity",
+  "skills": [
+   "application security",
+   "owasp",
+   "sast/dast",
+   "secure coding",
+   "threat modeling",
+   "burp suite",
+   "devsecops",
+   "python"
+  ],
+  "aliases": [
+   "appsec engineer",
+   "product security engineer"
+  ]
+ },
+ {
+  "role": "Security Architect",
+  "category": "Cybersecurity",
+  "skills": [
+   "security architecture",
+   "zero trust",
+   "identity and access management",
+   "pki",
+   "cloud security",
+   "threat modeling",
+   "nist",
+   "encryption"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "GRC Analyst",
+  "category": "Cybersecurity",
+  "skills": [
+   "grc",
+   "iso 27001",
+   "soc 2",
+   "nist",
+   "risk assessment",
+   "compliance",
+   "it audit",
+   "pci dss",
+   "hipaa",
+   "gdpr"
+  ],
+  "aliases": [
+   "grc consultant",
+   "compliance analyst"
+  ]
+ },
+ {
+  "role": "IT Auditor",
+  "category": "Cybersecurity",
+  "skills": [
+   "it audit",
+   "sox compliance",
+   "risk assessment",
+   "iso 27001",
+   "compliance",
+   "cisa",
+   "ms excel"
+  ],
+  "aliases": [
+   "information systems auditor"
+  ]
+ },
+ {
+  "role": "IAM Engineer",
+  "category": "Cybersecurity",
+  "skills": [
+   "identity and access management",
+   "okta",
+   "sailpoint",
+   "privileged access management",
+   "active directory",
+   "sso",
+   "mfa",
+   "ldap",
+   "saml",
+   "oauth",
+   "azure active directory"
+  ],
+  "aliases": [
+   "identity and access management engineer"
+  ]
+ },
+ {
+  "role": "Threat Intelligence Analyst",
+  "category": "Cybersecurity",
+  "skills": [
+   "threat intelligence",
+   "threat hunting",
+   "siem",
+   "malware analysis",
+   "python",
+   "edr"
+  ],
+  "aliases": [
+   "threat hunter"
+  ]
+ },
+ {
+  "role": "Malware Analyst",
+  "category": "Cybersecurity",
+  "skills": [
+   "malware analysis",
+   "reverse engineering",
+   "assembly",
+   "python",
+   "c",
+   "digital forensics"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Digital Forensics Analyst",
+  "category": "Cybersecurity",
+  "skills": [
+   "digital forensics",
+   "incident response",
+   "malware analysis",
+   "linux",
+   "windows server"
+  ],
+  "aliases": [
+   "dfir analyst"
+  ]
+ },
+ {
+  "role": "Vulnerability Management Analyst",
+  "category": "Cybersecurity",
+  "skills": [
+   "vulnerability assessment",
+   "nessus",
+   "qualys",
+   "risk assessment",
+   "patch management",
+   "owasp"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Incident Response Analyst",
+  "category": "Cybersecurity",
+  "skills": [
+   "incident response",
+   "siem",
+   "digital forensics",
+   "threat hunting",
+   "edr",
+   "splunk",
+   "malware analysis"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Endpoint Security Engineer",
+  "category": "Cybersecurity",
+  "skills": [
+   "endpoint security",
+   "edr",
+   "crowdstrike",
+   "intune",
+   "sccm",
+   "windows server",
+   "dlp"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "SAP Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap",
+   "sap s/4hana",
+   "sap fiori",
+   "sap hana",
+   "sap btp",
+   "sap solution manager",
+   "sap data migration"
+  ],
+  "aliases": [
+   "sap functional consultant",
+   "sap erp consultant"
+  ]
+ },
+ {
+  "role": "SAP Security Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap security",
+   "sap grc",
+   "segregation of duties",
+   "sap basis",
+   "sap s/4hana",
+   "sap fiori",
+   "sap hana",
+   "sox compliance"
+  ],
+  "aliases": [
+   "sap security analyst",
+   "sap authorization consultant"
+  ]
+ },
+ {
+  "role": "SAP FICO Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap fico",
+   "sap fi",
+   "sap co",
+   "sap s/4hana",
+   "sap data migration",
+   "sap fiori",
+   "sap bpc"
+  ],
+  "aliases": [
+   "sap finance consultant",
+   "sap fi/co consultant"
+  ]
+ },
+ {
+  "role": "SAP MM Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap mm",
+   "sap s/4hana",
+   "sap sd",
+   "sap ewm",
+   "sap wm",
+   "sap ariba",
+   "sap data migration"
+  ],
+  "aliases": [
+   "sap materials management consultant"
+  ]
+ },
+ {
+  "role": "SAP SD Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap sd",
+   "sap s/4hana",
+   "sap mm",
+   "sap fico",
+   "sap crm",
+   "idoc",
+   "sap data migration"
+  ],
+  "aliases": [
+   "sap sales and distribution consultant"
+  ]
+ },
+ {
+  "role": "SAP ABAP Developer",
+  "category": "SAP",
+  "skills": [
+   "abap",
+   "abap on hana",
+   "sap fiori",
+   "sapui5",
+   "odata",
+   "bapi",
+   "badi",
+   "idoc",
+   "alv reports",
+   "smartforms",
+   "sap rap",
+   "sap hana",
+   "sap s/4hana"
+  ],
+  "aliases": [
+   "sap abap consultant",
+   "abap developer"
+  ]
+ },
+ {
+  "role": "SAP Fiori Developer",
+  "category": "SAP",
+  "skills": [
+   "sap fiori",
+   "sapui5",
+   "odata",
+   "javascript",
+   "sap btp",
+   "abap",
+   "html",
+   "css",
+   "sap rap"
+  ],
+  "aliases": [
+   "sap ui5 developer",
+   "sapui5 developer"
+  ]
+ },
+ {
+  "role": "SAP Basis Administrator",
+  "category": "SAP",
+  "skills": [
+   "sap basis",
+   "sap hana",
+   "sap netweaver",
+   "linux",
+   "sap solution manager",
+   "sap s/4hana",
+   "oracle database",
+   "sap security"
+  ],
+  "aliases": [
+   "sap basis consultant"
+  ]
+ },
+ {
+  "role": "SAP HANA Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap hana",
+   "sql",
+   "abap on hana",
+   "sap bw",
+   "sap slt",
+   "sap btp"
+  ],
+  "aliases": [
+   "sap hana developer"
+  ]
+ },
+ {
+  "role": "SAP BW Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap bw",
+   "sap hana",
+   "sap analytics cloud",
+   "sap businessobjects",
+   "abap",
+   "sql",
+   "etl",
+   "sap bpc",
+   "sap s/4hana"
+  ],
+  "aliases": [
+   "sap bi consultant",
+   "sap bw/4hana consultant"
+  ]
+ },
+ {
+  "role": "SAP HCM Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap hcm",
+   "sap successfactors",
+   "sap fiori",
+   "abap",
+   "sap s/4hana"
+  ],
+  "aliases": [
+   "sap hr consultant",
+   "sap payroll consultant"
+  ]
+ },
+ {
+  "role": "SAP SuccessFactors Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap successfactors",
+   "sap hcm",
+   "sap btp",
+   "sap cpi",
+   "odata"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "SAP PP Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap pp",
+   "sap qm",
+   "sap mm",
+   "sap ewm",
+   "sap s/4hana"
+  ],
+  "aliases": [
+   "sap production planning consultant"
+  ]
+ },
+ {
+  "role": "SAP PM Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap pm",
+   "sap mm",
+   "sap pp",
+   "sap s/4hana"
+  ],
+  "aliases": [
+   "sap plant maintenance consultant"
+  ]
+ },
+ {
+  "role": "SAP EWM Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap ewm",
+   "sap wm",
+   "sap mm",
+   "sap sd",
+   "sap tm"
+  ],
+  "aliases": [
+   "sap warehouse consultant"
+  ]
+ },
+ {
+  "role": "SAP Integration Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap cpi",
+   "sap pi/po",
+   "sap btp",
+   "odata",
+   "idoc",
+   "soap",
+   "rest api",
+   "abap"
+  ],
+  "aliases": [
+   "sap cpi consultant",
+   "sap pi/po consultant",
+   "sap integration suite consultant"
+  ]
+ },
+ {
+  "role": "SAP BTP Developer",
+  "category": "SAP",
+  "skills": [
+   "sap btp",
+   "sap cap",
+   "node.js",
+   "java",
+   "sapui5",
+   "sap fiori",
+   "odata",
+   "sap rap"
+  ],
+  "aliases": [
+   "sap cap developer",
+   "sap btp consultant"
+  ]
+ },
+ {
+  "role": "SAP Ariba Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap ariba",
+   "sap mm",
+   "sap cpi",
+   "sap s/4hana"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "SAP S/4HANA Migration Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap s/4hana",
+   "sap data migration",
+   "sap hana",
+   "sap basis",
+   "sap fico",
+   "sap mm",
+   "sap sd"
+  ],
+  "aliases": [
+   "s/4hana consultant"
+  ]
+ },
+ {
+  "role": "SAP Analytics Cloud Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap analytics cloud",
+   "sap bw",
+   "sap hana",
+   "sap s/4hana",
+   "data visualization",
+   "sql",
+   "sap bpc"
+  ],
+  "aliases": [
+   "sac consultant"
+  ]
+ },
+ {
+  "role": "SAP SCM Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap ibp",
+   "sap scm",
+   "sap pp",
+   "sap mm",
+   "sap s/4hana"
+  ],
+  "aliases": [
+   "sap ibp consultant"
+  ]
+ },
+ {
+  "role": "SAP GRC Consultant",
+  "category": "SAP",
+  "skills": [
+   "sap grc",
+   "sap security",
+   "segregation of duties",
+   "sox compliance",
+   "sap s/4hana",
+   "compliance"
+  ],
+  "aliases": [
+   "sap grc access control consultant"
+  ]
+ },
+ {
+  "role": "Salesforce Administrator",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "salesforce",
+   "salesforce administration",
+   "sales cloud",
+   "service cloud",
+   "soql",
+   "jira"
+  ],
+  "aliases": [
+   "salesforce admin"
+  ]
+ },
+ {
+  "role": "Salesforce Consultant",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "salesforce",
+   "sales cloud",
+   "service cloud",
+   "salesforce cpq",
+   "salesforce marketing cloud",
+   "business analysis",
+   "requirements gathering"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Microsoft Dynamics 365 Consultant",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "dynamics 365",
+   "power platform",
+   "power apps",
+   "power automate",
+   "c#",
+   "sql server",
+   "azure",
+   "business analysis"
+  ],
+  "aliases": [
+   "d365 consultant",
+   "dynamics crm consultant"
+  ]
+ },
+ {
+  "role": "Power Platform Developer",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "power platform",
+   "power apps",
+   "power automate",
+   "power bi",
+   "sharepoint",
+   "azure",
+   "javascript",
+   "c#"
+  ],
+  "aliases": [
+   "power apps developer"
+  ]
+ },
+ {
+  "role": "Oracle Apps Consultant",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "oracle ebs",
+   "pl/sql",
+   "oracle forms",
+   "oracle fusion",
+   "sql"
+  ],
+  "aliases": [
+   "oracle ebs consultant",
+   "oracle apps technical consultant"
+  ]
+ },
+ {
+  "role": "Oracle Fusion Consultant",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "oracle fusion",
+   "oracle hcm",
+   "oracle integration cloud",
+   "pl/sql",
+   "sql"
+  ],
+  "aliases": [
+   "oracle cloud consultant"
+  ]
+ },
+ {
+  "role": "Oracle APEX Developer",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "oracle apex",
+   "pl/sql",
+   "sql",
+   "javascript",
+   "html",
+   "css",
+   "rest api",
+   "oracle database"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Workday Consultant",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "workday",
+   "business analysis",
+   "xml",
+   "requirements gathering"
+  ],
+  "aliases": [
+   "workday hcm consultant",
+   "workday integration consultant"
+  ]
+ },
+ {
+  "role": "ServiceNow Developer",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "servicenow",
+   "javascript",
+   "itsm",
+   "rest api",
+   "soap",
+   "itil",
+   "html",
+   "css"
+  ],
+  "aliases": [
+   "servicenow engineer"
+  ]
+ },
+ {
+  "role": "ServiceNow Administrator",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "servicenow",
+   "itsm",
+   "itil",
+   "incident management",
+   "change management",
+   "service desk"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "NetSuite Consultant",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "netsuite",
+   "javascript",
+   "sql",
+   "rest api",
+   "business analysis"
+  ],
+  "aliases": [
+   "netsuite developer"
+  ]
+ },
+ {
+  "role": "SharePoint Developer",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "sharepoint",
+   "spfx",
+   "microsoft 365",
+   "power automate",
+   "power apps",
+   "javascript",
+   "c#",
+   "powershell"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Mainframe Developer",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "mainframe",
+   "cobol",
+   "jcl",
+   "cics",
+   "db2",
+   "vsam",
+   "sql"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "COBOL Developer",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "cobol",
+   "jcl",
+   "db2",
+   "cics",
+   "vsam",
+   "mainframe"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "AS400 Developer",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "as400",
+   "sql",
+   "db2"
+  ],
+  "aliases": [
+   "rpg developer"
+  ]
+ },
+ {
+  "role": "RPA Developer",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "rpa",
+   "uipath",
+   "automation anywhere",
+   "blue prism",
+   "power automate",
+   "python",
+   "sql"
+  ],
+  "aliases": [
+   "uipath developer",
+   "automation developer"
+  ]
+ },
+ {
+  "role": "Odoo Developer",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "odoo",
+   "python",
+   "postgresql",
+   "xml",
+   "javascript",
+   "rest api"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Zoho Developer",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "zoho",
+   "javascript",
+   "rest api",
+   "html",
+   "css"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Magento Developer",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "magento",
+   "php",
+   "mysql",
+   "javascript",
+   "html",
+   "css",
+   "rest api",
+   "graphql"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Drupal Developer",
+  "category": "ERP, CRM & Enterprise",
+  "skills": [
+   "drupal",
+   "php",
+   "mysql",
+   "html",
+   "css",
+   "javascript",
+   "git"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "QA Engineer",
+  "category": "QA & Testing",
+  "skills": [
+   "manual testing",
+   "test cases",
+   "selenium",
+   "jira",
+   "regression testing",
+   "sql",
+   "api testing",
+   "postman",
+   "sdlc",
+   "stlc"
+  ],
+  "aliases": [
+   "software tester",
+   "quality assurance engineer",
+   "qa analyst"
+  ]
+ },
+ {
+  "role": "Manual Tester",
+  "category": "QA & Testing",
+  "skills": [
+   "manual testing",
+   "test cases",
+   "functional testing",
+   "regression testing",
+   "jira",
+   "sql",
+   "sdlc",
+   "stlc",
+   "defect tracking"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Automation Test Engineer",
+  "category": "QA & Testing",
+  "skills": [
+   "test automation",
+   "selenium",
+   "java",
+   "testng",
+   "cucumber",
+   "jenkins",
+   "git",
+   "api testing",
+   "postman",
+   "rest assured",
+   "maven"
+  ],
+  "aliases": [
+   "automation tester",
+   "qa automation engineer"
+  ]
+ },
+ {
+  "role": "SDET",
+  "category": "QA & Testing",
+  "skills": [
+   "test automation",
+   "java",
+   "python",
+   "selenium",
+   "rest assured",
+   "ci/cd",
+   "playwright",
+   "cypress",
+   "git",
+   "docker"
+  ],
+  "aliases": [
+   "software development engineer in test"
+  ]
+ },
+ {
+  "role": "Performance Test Engineer",
+  "category": "QA & Testing",
+  "skills": [
+   "performance testing",
+   "jmeter",
+   "loadrunner",
+   "k6",
+   "grafana",
+   "datadog",
+   "sql",
+   "linux"
+  ],
+  "aliases": [
+   "performance tester"
+  ]
+ },
+ {
+  "role": "Mobile Test Engineer",
+  "category": "QA & Testing",
+  "skills": [
+   "mobile testing",
+   "appium",
+   "selenium",
+   "java",
+   "test automation",
+   "android",
+   "ios",
+   "jira"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "ETL Tester",
+  "category": "QA & Testing",
+  "skills": [
+   "etl testing",
+   "sql",
+   "database testing",
+   "informatica",
+   "data warehouse",
+   "manual testing",
+   "jira"
+  ],
+  "aliases": [
+   "data tester"
+  ]
+ },
+ {
+  "role": "QA Lead",
+  "category": "QA & Testing",
+  "skills": [
+   "test management",
+   "agile",
+   "jira",
+   "test automation",
+   "risk assessment",
+   "stakeholder management"
+  ],
+  "aliases": [
+   "test lead",
+   "test manager"
+  ]
+ },
+ {
+  "role": "Product Manager",
+  "category": "Product, Project & Design",
+  "skills": [
+   "product management",
+   "product roadmap",
+   "agile",
+   "user stories",
+   "jira",
+   "a/b testing",
+   "stakeholder management",
+   "sql",
+   "google analytics",
+   "wireframing"
+  ],
+  "aliases": [
+   "pm"
+  ]
+ },
+ {
+  "role": "Product Owner",
+  "category": "Product, Project & Design",
+  "skills": [
+   "product management",
+   "scrum",
+   "user stories",
+   "jira",
+   "agile",
+   "stakeholder management",
+   "requirements gathering"
+  ],
+  "aliases": [
+   "po"
+  ]
+ },
+ {
+  "role": "Technical Product Manager",
+  "category": "Product, Project & Design",
+  "skills": [
+   "product management",
+   "rest api",
+   "system design",
+   "agile",
+   "sql",
+   "jira",
+   "product roadmap"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Project Manager",
+  "category": "Product, Project & Design",
+  "skills": [
+   "project management",
+   "agile",
+   "scrum",
+   "jira",
+   "pmp",
+   "stakeholder management",
+   "risk assessment",
+   "release management"
+  ],
+  "aliases": [
+   "it project manager"
+  ]
+ },
+ {
+  "role": "Scrum Master",
+  "category": "Product, Project & Design",
+  "skills": [
+   "scrum",
+   "agile",
+   "kanban",
+   "jira",
+   "scaled agile framework",
+   "confluence"
+  ],
+  "aliases": [
+   "agile coach"
+  ]
+ },
+ {
+  "role": "Delivery Manager",
+  "category": "Product, Project & Design",
+  "skills": [
+   "project management",
+   "agile",
+   "scrum",
+   "stakeholder management",
+   "risk assessment",
+   "release management",
+   "jira"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Systems Analyst",
+  "category": "Product, Project & Design",
+  "skills": [
+   "business analysis",
+   "requirements gathering",
+   "uml",
+   "sql",
+   "brd",
+   "user stories",
+   "jira"
+  ],
+  "aliases": [
+   "functional analyst"
+  ]
+ },
+ {
+  "role": "Technical Writer",
+  "category": "Product, Project & Design",
+  "skills": [
+   "technical writing",
+   "confluence",
+   "git",
+   "swagger",
+   "html"
+  ],
+  "aliases": [
+   "documentation engineer"
+  ]
+ },
+ {
+  "role": "UI/UX Designer",
+  "category": "Product, Project & Design",
+  "skills": [
+   "ux design",
+   "ui design",
+   "figma",
+   "wireframing",
+   "prototyping",
+   "ux research",
+   "usability testing",
+   "design systems",
+   "adobe xd",
+   "interaction design",
+   "information architecture"
+  ],
+  "aliases": [
+   "ui ux designer",
+   "ux designer",
+   "ui designer"
+  ]
+ },
+ {
+  "role": "UX Researcher",
+  "category": "Product, Project & Design",
+  "skills": [
+   "ux research",
+   "usability testing",
+   "statistics",
+   "interaction design",
+   "information architecture"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Product Designer",
+  "category": "Product, Project & Design",
+  "skills": [
+   "ux design",
+   "ui design",
+   "figma",
+   "prototyping",
+   "design systems",
+   "ux research"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Graphic Designer",
+  "category": "Product, Project & Design",
+  "skills": [
+   "adobe photoshop",
+   "adobe illustrator",
+   "figma",
+   "canva",
+   "graphic design"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "SEO Specialist",
+  "category": "Product, Project & Design",
+  "skills": [
+   "seo",
+   "google analytics",
+   "wordpress",
+   "html",
+   "web analytics"
+  ],
+  "aliases": [
+   "seo analyst"
+  ]
+ },
+ {
+  "role": "Solution Architect",
+  "category": "Architecture & Leadership",
+  "skills": [
+   "system design",
+   "microservices",
+   "aws",
+   "azure",
+   "api design",
+   "event-driven architecture",
+   "kubernetes",
+   "cloud security"
+  ],
+  "aliases": [
+   "technical architect"
+  ]
+ },
+ {
+  "role": "Software Architect",
+  "category": "Architecture & Leadership",
+  "skills": [
+   "system design",
+   "microservices",
+   "design patterns",
+   "domain-driven design",
+   "event-driven architecture",
+   "api design",
+   "distributed systems",
+   "aws",
+   "kubernetes"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Enterprise Architect",
+  "category": "Architecture & Leadership",
+  "skills": [
+   "enterprise architecture",
+   "togaf",
+   "system design",
+   "microservices",
+   "cloud security",
+   "api design"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Technical Lead",
+  "category": "Architecture & Leadership",
+  "skills": [
+   "system design",
+   "microservices",
+   "code review",
+   "aws",
+   "agile",
+   "design patterns",
+   "ci/cd",
+   "rest api"
+  ],
+  "aliases": [
+   "tech lead"
+  ]
+ },
+ {
+  "role": "Engineering Manager",
+  "category": "Architecture & Leadership",
+  "skills": [
+   "agile",
+   "scrum",
+   "system design",
+   "project management",
+   "stakeholder management",
+   "code review"
+  ],
+  "aliases": []
+ },
+ {
+  "role": "Telecom Engineer",
+  "category": "Architecture & Leadership",
+  "skills": [
+   "5g",
+   "lte",
+   "voip",
+   "networking",
+   "cisco",
+   "tcp/ip"
+  ],
+  "aliases": [
+   "telecom network engineer"
+  ]
+ }
+]

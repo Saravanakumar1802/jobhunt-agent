@@ -64,7 +64,7 @@ Job_copilot/
 │   │   │   └── scoring.py    hybrid match score
 │   │   ├── agents/           LangGraph state, nodes, graph, on-demand outreach agent
 │   │   └── api/              FastAPI dependencies + routers
-│   ├── data/                 skills_taxonomy.json, demo_jobs.json
+│   ├── data/                 skills_taxonomy.json (700+ IT skills + aliases), roles.json (~200 roles → usual skills), demo_jobs.json
 │   ├── evals/                labelled jobs, eval runner, RESULTS.md
 │   ├── scripts/              check_models.py
 │   └── tests/                unit/, integration/, test_live.py (opt-in)
@@ -153,7 +153,8 @@ Job_copilot/
 | GET | `/auth/me` | JWT | Current user | → `UserOut` |
 | GET/POST | `/profiles` | JWT | List / create profiles | `ProfileIn` → `ProfileOut` |
 | GET/PUT/DELETE | `/profiles/{id}` | JWT | One profile | |
-| GET | `/profiles/skills/suggestions` | – | Autocomplete list | → `[str]` |
+| GET | `/profiles/skills/suggestions` | – | Every skill with aliases, popular first, for the skill dropdown | → `[{name, aliases}]` |
+| GET | `/profiles/roles/suggestions` | – | Every IT role with its usual skills, for the role dropdown | → `[{role, category, skills, aliases}]` |
 | POST | `/search` | JWT | **Runs the agent graph, streams SSE** | `{profile_id, filters, force_refresh}` → `progress…` then `result {jobs, meta}` |
 | GET | `/jobs/{id}` | JWT | Job detail | → `NormalizedJob` |
 | GET | `/jobs/{id}/hr-search-link` | JWT | LinkedIn recruiter search URL | → `{company,url}` |
@@ -301,7 +302,7 @@ The plan said "LiteLLM Router". I used LiteLLM's unified API with my own ~80-lin
 | `components/jobs/JobCard.jsx` | Publisher badge (LinkedIn/Naukri highlighted), animated score ring, matched/missing chips, apply / draft / save / company actions, attribution. Memoised. |
 | `components/outreach/OutreachDialog.jsx` | Native `<dialog>` side sheet with `showModal()` and `closedby="any"`. Browser handles focus trap, Esc and focus return; light-dismiss fallback for Safari. Kind and tone controls, editable draft, Copy, LinkedIn recruiter search, HR-link save. |
 | `components/filters/FilterPanel.jsx` | All filters; segmented controls built on native radios. |
-| `components/search/Composer.jsx`, `profile/SkillInput.jsx` | One composer for the search brief: profile picker, role, years, skills, with Filters and About you folding out inline; chip input with datalist autocomplete. |
+| `components/search/Composer.jsx`, `profile/SkillInput.jsx` | One composer for the search brief: profile picker, role, years, skills, with Filters and About you folding out inline; chip input with a typeahead dropdown (`ui/Listbox.jsx`, `hooks/useTypeahead.js`, `utils/typeahead.js`): type a letter to see matching skills, pick one to avoid typos, or type your own. `profile/RoleInput.jsx` does the same for roles and surfaces the role's usual skills as one-click chips. |
 | `components/layout/AppShell.jsx` | Sticky nav + `ModelBanner` (warns when an AI step has no working model or there are no keys). |
 | `components/ui/*` | `Segmented`, `ScoreRing`, `Toast`, `Logo`. |
 | `pages/Landing.jsx` | Hero with 3D constellation; GSAP ScrollTrigger pins the "five agents" section and lights each step while scrolling (inside `gsap.matchMedia` for reduced motion). |

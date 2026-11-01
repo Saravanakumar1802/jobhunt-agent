@@ -13,6 +13,7 @@ export const profilesApi = {
   update: (id, body) => api(`/profiles/${id}`, { method: "PUT", body }),
   remove: (id) => api(`/profiles/${id}`, { method: "DELETE" }),
   skillSuggestions: () => api("/profiles/skills/suggestions"),
+  roleSuggestions: () => api("/profiles/roles/suggestions"),
 };
 
 export const jobsApi = {

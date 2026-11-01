@@ -91,3 +91,47 @@ def test_frameworks_imply_language_and_web_basics():
 def test_normalize_splits_known_compound_skills():
     assert normalize_skills(["JavaScript/TypeScript"]) == ["javascript", "typescript"]
     assert normalize_skills(["ci/cd", "foo/bar"]) == ["ci/cd", "foo/bar"]  # known or unknown wholes stay intact
+
+
+class TestCatalogData:
+    """The dropdown data is hand-maintained, so these guard against typos that would break matching."""
+
+    def test_role_skills_are_all_canonical_skills(self):
+        from app.services.text.skills import known_skills, role_catalog
+
+        known = set(known_skills())
+        bad = [(r["role"], s) for r in role_catalog() for s in r["skills"] if s not in known]
+        assert bad == []
+        assert all(r["skills"] and r["category"] for r in role_catalog())
+
+    def test_roles_cover_the_main_it_fields(self):
+        from app.services.text.skills import role_catalog
+
+        roles = {r["role"] for r in role_catalog()}
+        assert {"Full Stack Developer", "DevOps Engineer", "Data Analyst", "Data Scientist", "SAP FICO Consultant",
+                "SAP Security Consultant", "Penetration Tester", "QA Engineer", "UI/UX Designer"} <= roles
+
+    def test_implications_use_known_skills(self):
+        from app.services.text.skills import IMPLIED_BY, known_skills
+
+        known = set(known_skills())
+        bad = {n for parent, kids in IMPLIED_BY.items() for n in [parent, *kids] if n not in known}
+        assert bad == set()
+
+    def test_every_alias_belongs_to_one_skill(self):
+        from app.services.text.skills import _taxonomy
+
+        seen: dict[str, str] = {}
+        for name, aliases in _taxonomy().items():
+            for a in {name, *aliases}:
+                assert seen.setdefault(a.lower(), name) == name, f"{a!r} is claimed by two skills"
+
+    def test_new_fields_are_recognised_in_job_text(self):
+        text = "Need SAP S/4HANA FICO and ABAP on HANA; also Burp Suite, CrowdStrike, Power BI, DAX, UiPath, Snowflake."
+        assert {"sap s/4hana", "sap fico", "abap on hana", "burp suite", "crowdstrike", "power bi", "dax", "uipath",
+                "snowflake"} <= set(extract_skills(text))
+        assert "go" not in extract_skills("Ready to go the extra mile, excel at teamwork")  # plain words stay plain
+
+    def test_sap_modules_imply_sap_and_chains_are_followed(self):
+        have = expand_implied(["sap mm", "redux"])
+        assert {"sap", "react", "javascript", "html"} <= have

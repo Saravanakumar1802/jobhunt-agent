@@ -5,6 +5,7 @@ import { profilesApi, statusApi, trackerApi } from "../api/endpoints";
 export const keys = {
   profiles: ["profiles"],
   skills: ["skills"],
+  roles: ["roles"],
   tracker: ["tracker"],
   status: ["status"],
   models: ["models"],
@@ -14,6 +15,9 @@ export const useProfiles = () => useQuery({ queryKey: keys.profiles, queryFn: pr
 
 export const useSkillSuggestions = () =>
   useQuery({ queryKey: keys.skills, queryFn: profilesApi.skillSuggestions, staleTime: Infinity });
+
+export const useRoleSuggestions = () =>
+  useQuery({ queryKey: keys.roles, queryFn: profilesApi.roleSuggestions, staleTime: Infinity });
 
 export function useSaveProfile() {
   const qc = useQueryClient();

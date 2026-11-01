@@ -80,3 +80,14 @@ def test_split_requirements_by_cue_and_section():
     required, nice = split_requirements(text)
     assert required == ["python", "react"]
     assert nice == ["docker", "aws", "kubernetes"]
+
+
+def test_frameworks_imply_language_and_web_basics():
+    have = expand_implied(["react", "node.js", "redux", "fastapi"])
+    assert {"javascript", "html", "css", "python", "rest api"} <= have
+    assert "java" not in have
+
+
+def test_normalize_splits_known_compound_skills():
+    assert normalize_skills(["JavaScript/TypeScript"]) == ["javascript", "typescript"]
+    assert normalize_skills(["ci/cd", "foo/bar"]) == ["ci/cd", "foo/bar"]  # known or unknown wholes stay intact

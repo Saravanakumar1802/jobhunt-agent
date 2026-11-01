@@ -12,7 +12,27 @@ from pathlib import Path
 TAXONOMY_PATH = Path(__file__).resolve().parents[3] / "data" / "skills_taxonomy.json"
 
 # Composite skills imply their parts (a MERN developer knows MongoDB, Express, React, Node).
-IMPLIES = {"mern": ["mongodb", "express", "react", "node.js", "javascript"], "next.js": ["react"]}
+IMPLIES = {
+    "mern": ["mongodb", "express", "react", "node.js", "javascript"],
+    "mean": ["mongodb", "express", "angular", "node.js", "javascript"],
+    # Frameworks imply the language and web basics every posting lists next to them. Without this a
+    # React/Node developer scored "missing javascript, html, css" on most full-stack jobs.
+    "react": ["javascript", "html", "css"],
+    "next.js": ["react"],
+    "redux": ["react"],
+    "angular": ["typescript", "javascript", "html", "css"],
+    "vue": ["javascript", "html", "css"],
+    "typescript": ["javascript"],
+    "node.js": ["javascript"],
+    "express": ["node.js", "rest api"],
+    "fastapi": ["python", "rest api"],
+    "django": ["python"],
+    "flask": ["python", "rest api"],
+    "tailwind": ["css"],
+    "sass": ["css"],
+    "postgresql": ["sql"],
+    "mysql": ["sql"],
+}
 
 
 @lru_cache
@@ -57,15 +77,24 @@ def normalize_skills(skills: list[str]) -> list[str]:
     seen: dict[str, None] = {}
     for s in skills:
         c = canonical(s)
-        if c and len(c) <= 40:
-            seen.setdefault(c, None)
+        # LLMs often write "javascript/typescript" as one item; split it when every part is a known skill.
+        parts = [canonical(p) for p in c.split("/")] if "/" in c and c not in _taxonomy() else [c]
+        if len(parts) > 1 and not all(p in _taxonomy() for p in parts):
+            parts = [c]
+        for p in parts:
+            if p and len(p) <= 40:
+                seen.setdefault(p, None)
     return list(seen)
 
 
 def expand_implied(skills: list[str] | set[str]) -> set[str]:
     out = set(skills)
-    for s in list(out):
-        out.update(IMPLIES.get(s, []))
+    pending = list(out)
+    while pending:  # transitive: redux → react → javascript
+        for implied in IMPLIES.get(pending.pop(), []):
+            if implied not in out:
+                out.add(implied)
+                pending.append(implied)
     return out
 
 

@@ -6,7 +6,7 @@ bounded nudge (±15) for things code can't judge (domain, seniority).
 """
 
 from app.schemas.job import JobAnalysis, MatchResult
-from app.services.text.skills import expand_implied
+from app.services.text.skills import expand_implied, normalize_skills
 
 REQUIRED_WEIGHT, NICE_WEIGHT = 0.8, 0.2
 MAX_ADJUST = 15
@@ -18,9 +18,15 @@ def clamp(v: float, lo: int = 0, hi: int = 100) -> int:
     return int(max(lo, min(hi, round(v))))
 
 
+def _wanted(analysis: JobAnalysis) -> tuple[list[str], list[str]]:
+    """Required / nice skills, re-normalised so analyses cached before a taxonomy fix still score correctly."""
+    required = normalize_skills(analysis.required_skills)
+    return required, [s for s in normalize_skills(analysis.nice_to_have) if s not in required]
+
+
 def skill_sets(profile_skills: list[str], analysis: JobAnalysis) -> tuple[list[str], list[str], list[str]]:
     have = expand_implied(profile_skills)
-    required, nice = analysis.required_skills, analysis.nice_to_have
+    required, nice = _wanted(analysis)
     matched = [s for s in dict.fromkeys(required + nice) if s in have]
     missing = [s for s in required if s not in have]
     missing_nice = [s for s in nice if s not in have]
@@ -29,7 +35,7 @@ def skill_sets(profile_skills: list[str], analysis: JobAnalysis) -> tuple[list[s
 
 def base_score(profile_skills: list[str], analysis: JobAnalysis, years: float | None) -> int:
     have = expand_implied(profile_skills)
-    req, nice = analysis.required_skills, analysis.nice_to_have
+    req, nice = _wanted(analysis)
     req_cov = sum(s in have for s in req) / len(req) if req else 0.5
     nice_cov = sum(s in have for s in nice) / len(nice) if nice else 0.5
     score = 100 * (REQUIRED_WEIGHT * req_cov + NICE_WEIGHT * nice_cov) ** CALIBRATION

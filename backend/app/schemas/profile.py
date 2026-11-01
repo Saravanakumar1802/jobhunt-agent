@@ -23,8 +23,9 @@ class ProfileIn(BaseModel):
 
     def profile_hash(self) -> str:
         """Identity for match caching: any change to role/skills/experience invalidates scores."""
+        # "v" is the scoring version: bump it when scoring rules change so cached matches are recomputed.
         return stable_hash(
-            {"role": self.target_role.lower().strip(), "skills": sorted(self.skills), "years": self.years_experience}
+            {"role": self.target_role.lower().strip(), "skills": sorted(self.skills), "years": self.years_experience, "v": 2}
         )[:24]
 
 

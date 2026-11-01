@@ -41,7 +41,7 @@ export const FILTER_OPTIONS = {
 
 export const DEFAULT_FILTERS = {
   country: "in", city: "", anywhere: false, work_type: "any", job_type: "any",
-  experience: "any", date_posted: "7d", source: "all", min_score: 40,
+  experience: "any", date_posted: "7d", source: "all", min_score: 0,
 };
 
 const labelOf = (list, v) => list.find((o) => o.value === v)?.label;

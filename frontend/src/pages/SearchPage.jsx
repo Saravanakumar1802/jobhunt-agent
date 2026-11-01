@@ -17,7 +17,7 @@ import { useSearchStream } from "../hooks/useSearchStream";
 import { DEFAULT_FILTERS, describeFilters } from "../utils/format";
 
 const GlassCards = lazy(() => import("../components/three/GlassCards"));
-const FILTERS_KEY = "jhc.filters";
+const FILTERS_KEY = "jhc.filters.v2"; // v2: min_score default dropped 40 → 0, so old saved filters are ignored
 
 function loadFilters() {
   try {

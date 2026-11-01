@@ -6,7 +6,7 @@ from app.repositories.jobs import JobRepo
 from app.repositories.usage import UsageRepo
 from app.schemas.filters import JobType, SearchFilters, Source, WorkType
 from app.services.job_sources.adzuna import AdzunaProvider
-from app.services.job_sources.base import QuotaExceededError
+from app.services.job_sources.base import ProviderError, QuotaExceededError
 from app.services.job_sources.jsearch import JSearchProvider
 from app.services.job_sources.registry import JobSourceRegistry, dedupe
 from app.services.job_sources.remote_boards import ArbeitnowProvider, RemotiveProvider
@@ -59,7 +59,7 @@ class TestJSearchParams:
     @respx.mock
     async def test_reads_quota_header_and_maps_429(self, http, settings):
         settings.rapidapi_key = "k"
-        route = respx.get("https://jsearch.p.rapidapi.com/search")
+        route = respx.get("https://jsearch.p.rapidapi.com/search-v2")
         route.return_value = httpx.Response(200, json={"data": [JSEARCH_ITEM]},
                                             headers={"x-ratelimit-requests-remaining": "41"})
         jobs, remaining = await JSearchProvider(http).search("MERN", SearchFilters())
@@ -68,6 +68,22 @@ class TestJSearchParams:
 
         route.return_value = httpx.Response(429)
         with pytest.raises(QuotaExceededError):
+            await JSearchProvider(http).search("MERN", SearchFilters())
+
+    @respx.mock
+    async def test_reads_v2_shape(self, http, settings):
+        settings.rapidapi_key = "k"
+        respx.get("https://jsearch.p.rapidapi.com/search-v2").mock(
+            return_value=httpx.Response(200, json={"data": {"jobs": [JSEARCH_ITEM], "cursor": None}}))
+        jobs, _ = await JSearchProvider(http).search("MERN", SearchFilters())
+        assert [j.id for j in jobs] == ["jsearch:abc=="]
+
+    @respx.mock
+    async def test_403_is_a_setup_error_with_the_api_message(self, http, settings):
+        settings.rapidapi_key = "k"
+        respx.get("https://jsearch.p.rapidapi.com/search-v2").mock(
+            return_value=httpx.Response(403, json={"message": "You are not subscribed to this API."}))
+        with pytest.raises(ProviderError, match="HTTP 403 \\(You are not subscribed"):
             await JSearchProvider(http).search("MERN", SearchFilters())
 
 
@@ -95,7 +111,7 @@ class TestRegistry:
         settings.rapidapi_key = "k"
         settings.adzuna_app_id, settings.adzuna_app_key = "id", "key"
         with respx.mock:
-            respx.get("https://jsearch.p.rapidapi.com/search").mock(return_value=httpx.Response(429))
+            respx.get("https://jsearch.p.rapidapi.com/search-v2").mock(return_value=httpx.Response(429))
             adz = respx.get("https://api.adzuna.com/v1/api/jobs/in/search/1").mock(return_value=httpx.Response(
                 200, json={"results": [{"id": 1, "title": "Python Dev", "description": "Python", "company": {"display_name": "A"},
                                         "location": {"display_name": "Chennai"}, "redirect_url": "u"}]}))
@@ -110,7 +126,7 @@ class TestRegistry:
         settings.jsearch_monthly_quota = 1
         await registry.usage_repo.record_api_call("jsearch")
         with respx.mock(assert_all_called=False) as mock:
-            js = mock.get("https://jsearch.p.rapidapi.com/search")
+            js = mock.get("https://jsearch.p.rapidapi.com/search-v2")
             mock.get("https://remotive.com/api/remote-jobs").mock(return_value=httpx.Response(200, json={"jobs": []}))
             mock.get("https://www.arbeitnow.com/api/job-board-api").mock(return_value=httpx.Response(200, json={"data": []}))
             out = await registry.search("Dev", SearchFilters())

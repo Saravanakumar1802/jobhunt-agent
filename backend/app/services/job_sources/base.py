@@ -45,11 +45,22 @@ class JobProvider(ABC):
             resp = await self.client.get(url, **kwargs)
         except httpx.HTTPError as exc:
             raise ProviderError(f"{self.name}: {exc.__class__.__name__}") from exc
-        if resp.status_code in (402, 403, 429):
-            raise QuotaExceededError(f"{self.name}: HTTP {resp.status_code}")
-        if resp.status_code >= 400:
-            raise ProviderError(f"{self.name}: HTTP {resp.status_code}")
-        return resp
+        if resp.status_code < 400:
+            return resp
+        detail = f"{self.name}: HTTP {resp.status_code}{api_message(resp)}"
+        # 403 is usually "not subscribed" / bad key: a setup problem, so don't zero the month's quota for it.
+        if resp.status_code in (402, 429):
+            raise QuotaExceededError(detail)
+        raise ProviderError(detail)
+
+
+def api_message(resp: httpx.Response) -> str:
+    """The provider's own error text, e.g. ' (You are not subscribed to this API.)'."""
+    try:
+        msg = resp.json().get("message")
+    except (ValueError, AttributeError):
+        msg = None
+    return f" ({str(msg)[:120]})" if msg else ""
 
 
 HYBRID_RE = re.compile(r"\bhybrid\b", re.IGNORECASE)

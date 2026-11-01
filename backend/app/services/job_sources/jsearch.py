@@ -9,7 +9,8 @@ from app.schemas.filters import DatePosted, Experience, JobType, SearchFilters, 
 from app.schemas.job import NormalizedJob
 from app.services.job_sources.base import JobProvider, ProviderError, infer_work_type, parse_dt, work_type_ok
 
-URL = "https://jsearch.p.rapidapi.com/search"
+# RapidAPI retired /search in Oct 2026 (it now answers 404 "Endpoint '/search' does not exist").
+URL = "https://jsearch.p.rapidapi.com/search-v2"
 HOST = "jsearch.p.rapidapi.com"
 
 DATE_MAP = {DatePosted.ANY: "all", DatePosted.DAY: "today", DatePosted.THREE_DAYS: "3days",
@@ -63,6 +64,8 @@ class JSearchProvider(JobProvider):
             data = resp.json().get("data") or []
         except ValueError as exc:
             raise ProviderError("jsearch: invalid JSON") from exc
+        if isinstance(data, dict):  # search-v2: {"jobs": [...], "cursor": ...}; legacy: a plain list
+            data = data.get("jobs") or []
         remaining = resp.headers.get("x-ratelimit-requests-remaining")
         jobs = [self.normalize(item) for item in data]
         jobs = [j for j in jobs if work_type_ok(j.work_type, filters.work_type)]

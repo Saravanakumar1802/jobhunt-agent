@@ -1,0 +1,366 @@
+{
+ "profile": {
+  "name": "Eval profile",
+  "target_role": "MERN Stack + Python AI Engineer",
+  "years_experience": 2,
+  "description": "Full stack MERN developer building LLM apps with Python and FastAPI.",
+  "skills": [
+   "react",
+   "node.js",
+   "express",
+   "mongodb",
+   "javascript",
+   "python",
+   "fastapi",
+   "llm",
+   "langchain",
+   "rag",
+   "git",
+   "rest api",
+   "html",
+   "css"
+  ]
+ },
+ "labels": [
+  {
+   "external_id": "demo-01",
+   "title": "MERN Stack Developer",
+   "label_score": 85,
+   "gold_required": [
+    "react",
+    "node.js",
+    "express",
+    "mongodb",
+    "javascript",
+    "rest api",
+    "git"
+   ],
+   "gold_nice": [
+    "typescript",
+    "redux",
+    "docker"
+   ]
+  },
+  {
+   "external_id": "demo-02",
+   "title": "AI Engineer (Python, LLMs)",
+   "label_score": 75,
+   "gold_required": [
+    "python",
+    "llm",
+    "langchain",
+    "fastapi",
+    "rag",
+    "vector databases"
+   ],
+   "gold_nice": [
+    "langgraph",
+    "docker",
+    "aws"
+   ]
+  },
+  {
+   "external_id": "demo-03",
+   "title": "Full Stack Engineer \u2013 React & FastAPI",
+   "label_score": 80,
+   "gold_required": [
+    "react",
+    "python",
+    "fastapi",
+    "postgresql",
+    "rest api"
+   ],
+   "gold_nice": [
+    "typescript",
+    "docker",
+    "ci/cd"
+   ]
+  },
+  {
+   "external_id": "demo-04",
+   "title": "Generative AI Developer",
+   "label_score": 55,
+   "gold_required": [
+    "python",
+    "generative ai",
+    "prompt engineering",
+    "openai api",
+    "rag",
+    "embeddings"
+   ],
+   "gold_nice": [
+    "langgraph",
+    "pinecone",
+    "mlops"
+   ]
+  },
+  {
+   "external_id": "demo-05",
+   "title": "Backend Developer \u2013 Node.js",
+   "label_score": 60,
+   "gold_required": [
+    "node.js",
+    "express",
+    "mongodb",
+    "redis",
+    "microservices"
+   ],
+   "gold_nice": [
+    "kafka",
+    "aws",
+    "docker"
+   ]
+  },
+  {
+   "external_id": "demo-06",
+   "title": "React Frontend Engineer",
+   "label_score": 65,
+   "gold_required": [
+    "react",
+    "javascript",
+    "typescript",
+    "html",
+    "css",
+    "redux"
+   ],
+   "gold_nice": [
+    "next.js",
+    "tailwind",
+    "jest"
+   ]
+  },
+  {
+   "external_id": "demo-07",
+   "title": "Python Developer \u2013 AI Agents",
+   "label_score": 50,
+   "gold_required": [
+    "python",
+    "ai agents",
+    "langgraph",
+    "fastapi",
+    "asyncio"
+   ],
+   "gold_nice": [
+    "llamaindex",
+    "redis",
+    "kubernetes"
+   ]
+  },
+  {
+   "external_id": "demo-08",
+   "title": "Junior MERN Developer",
+   "label_score": 95,
+   "gold_required": [
+    "javascript",
+    "react",
+    "node.js",
+    "mongodb",
+    "html",
+    "css"
+   ],
+   "gold_nice": [
+    "git",
+    "tailwind"
+   ]
+  },
+  {
+   "external_id": "demo-09",
+   "title": "Machine Learning Engineer",
+   "label_score": 20,
+   "gold_required": [
+    "python",
+    "machine learning",
+    "pytorch",
+    "scikit-learn",
+    "pandas"
+   ],
+   "gold_nice": [
+    "mlops",
+    "aws",
+    "docker"
+   ]
+  },
+  {
+   "external_id": "demo-10",
+   "title": "Senior Full Stack Developer (MERN + AI)",
+   "label_score": 60,
+   "gold_required": [
+    "react",
+    "node.js",
+    "mongodb",
+    "python",
+    "llm",
+    "system design"
+   ],
+   "gold_nice": [
+    "kubernetes",
+    "aws",
+    "graphql"
+   ]
+  },
+  {
+   "external_id": "demo-11",
+   "title": "LLM Application Engineer",
+   "label_score": 70,
+   "gold_required": [
+    "python",
+    "llm",
+    "rag",
+    "fastapi",
+    "prompt engineering",
+    "vector databases"
+   ],
+   "gold_nice": [
+    "fine-tuning",
+    "hugging face"
+   ]
+  },
+  {
+   "external_id": "demo-12",
+   "title": "Software Engineer \u2013 Next.js",
+   "label_score": 50,
+   "gold_required": [
+    "next.js",
+    "react",
+    "typescript",
+    "node.js",
+    "postgresql"
+   ],
+   "gold_nice": [
+    "prisma",
+    "vercel",
+    "graphql"
+   ]
+  },
+  {
+   "external_id": "demo-13",
+   "title": "Data Engineer",
+   "label_score": 15,
+   "gold_required": [
+    "python",
+    "sql",
+    "spark",
+    "airflow",
+    "aws"
+   ],
+   "gold_nice": [
+    "kafka",
+    "docker"
+   ]
+  },
+  {
+   "external_id": "demo-14",
+   "title": "AI/ML Intern",
+   "label_score": 35,
+   "gold_required": [
+    "python",
+    "machine learning",
+    "pandas",
+    "numpy"
+   ],
+   "gold_nice": [
+    "llm",
+    "git"
+   ]
+  },
+  {
+   "external_id": "demo-15",
+   "title": "Node.js + MongoDB Engineer",
+   "label_score": 75,
+   "gold_required": [
+    "node.js",
+    "mongodb",
+    "express",
+    "jwt",
+    "rest api"
+   ],
+   "gold_nice": [
+    "socket.io",
+    "redis"
+   ]
+  },
+  {
+   "external_id": "demo-16",
+   "title": "Applied AI Engineer \u2013 RAG",
+   "label_score": 70,
+   "gold_required": [
+    "python",
+    "rag",
+    "embeddings",
+    "langchain",
+    "fastapi",
+    "mongodb"
+   ],
+   "gold_nice": [
+    "langgraph",
+    "docker",
+    "gcp"
+   ]
+  },
+  {
+   "external_id": "demo-17",
+   "title": "DevOps Engineer",
+   "label_score": 5,
+   "gold_required": [
+    "docker",
+    "kubernetes",
+    "aws",
+    "terraform",
+    "ci/cd",
+    "linux"
+   ],
+   "gold_nice": [
+    "python",
+    "bash"
+   ]
+  },
+  {
+   "external_id": "demo-18",
+   "title": "Full Stack Developer \u2013 MERN",
+   "label_score": 75,
+   "gold_required": [
+    "mongodb",
+    "express",
+    "react",
+    "node.js",
+    "typescript"
+   ],
+   "gold_nice": [
+    "aws",
+    "docker",
+    "jest"
+   ]
+  },
+  {
+   "external_id": "demo-19",
+   "title": "Conversational AI Developer",
+   "label_score": 55,
+   "gold_required": [
+    "python",
+    "nlp",
+    "llm",
+    "fastapi",
+    "prompt engineering"
+   ],
+   "gold_nice": [
+    "langgraph",
+    "redis"
+   ]
+  },
+  {
+   "external_id": "demo-20",
+   "title": "Frontend Developer \u2013 React + Three.js",
+   "label_score": 60,
+   "gold_required": [
+    "react",
+    "javascript",
+    "three.js",
+    "css"
+   ],
+   "gold_nice": [
+    "typescript",
+    "figma"
+   ]
+  }
+ ]
+}

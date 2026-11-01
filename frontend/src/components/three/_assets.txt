@@ -1,0 +1,89 @@
+function cardGeometry() {
+  const r = 0.09, w = W - 0.04, h = H - 0.04;
+  const s = new THREE.Shape();
+  s.moveTo(-w / 2 + r, -h / 2);
+  s.lineTo(w / 2 - r, -h / 2);
+  s.quadraticCurveTo(w / 2, -h / 2, w / 2, -h / 2 + r);
+  s.lineTo(w / 2, h / 2 - r);
+  s.quadraticCurveTo(w / 2, h / 2, w / 2 - r, h / 2);
+  s.lineTo(-w / 2 + r, h / 2);
+  s.quadraticCurveTo(-w / 2, h / 2, -w / 2, h / 2 - r);
+  s.lineTo(-w / 2, -h / 2 + r);
+  s.quadraticCurveTo(-w / 2, -h / 2, -w / 2 + r, -h / 2);
+  const g = new THREE.ExtrudeGeometry(s, {
+    depth: 0.035, bevelEnabled: true, bevelThickness: 0.022, bevelSize: 0.02, bevelSegments: 5, curveSegments: 12,
+  });
+  g.center();
+  return g;
+}
+
+const glass = (overrides = {}) =>
+  new THREE.MeshPhysicalMaterial({
+    color: "#ffffff", transmission: 1, thickness: 0.45, roughness: 0.06, ior: 1.5,
+    clearcoat: 1, clearcoatRoughness: 0.04, iridescence: 0.35, iridescenceIOR: 1.3,
+    attenuationColor: "#dbe2ff", attenuationDistance: 3, specularIntensity: 1, envMapIntensity: 1.25,
+    ...overrides,
+  });
+
+function roundRect(g, x, y, w, h, r) {
+  g.beginPath();
+  g.roundRect(x, y, w, h, r);
+}
+
+function labelTexture([title, company, score], highlight) {
+  const c = document.createElement("canvas");
+  c.width = 768;
+  c.height = 480;
+  const g = c.getContext("2d");
+  const ink = highlight ? "#ffffff" : "#0b0e14";
+  const sub = highlight ? "rgba(255,255,255,0.75)" : "#697186";
+  const faint = highlight ? "rgba(255,255,255,0.22)" : "rgba(11,14,20,0.08)";
+  const font = (w, px) => `${w} ${px}px Archivo, system-ui, sans-serif`;
+
+  g.fillStyle = faint;
+  roundRect(g, 52, 52, 76, 76, 20);
+  g.fill();
+  g.fillStyle = ink;
+  g.font = font(700, 36);
+  g.textAlign = "center";
+  g.fillText(company[0], 90, 104);
+  g.textAlign = "left";
+  g.fillStyle = sub;
+  g.font = font(600, 30);
+  g.fillText(company, 150, 100);
+
+  g.fillStyle = ink;
+  let size = 54;
+  do g.font = font(700, size--); while (g.measureText(title).width > 660 && size > 30);
+  g.fillText(title, 52, 222);
+
+  g.fillStyle = faint;
+  [[52, 262, 300], [52, 300, 420], [52, 338, 240]].forEach(([x, y, w]) => { roundRect(g, x, y, w, 18, 9); g.fill(); });
+
+  g.fillStyle = score >= 75 ? "#d9f57e" : score >= 55 ? "#e0e6ff" : "#e2e5ea";
+  roundRect(g, 532, 368, 186, 70, 35);
+  g.fill();
+  g.fillStyle = "#0b0e14";
+  g.font = font(700, 38);
+  g.textAlign = "center";
+  g.fillText(`${score}% fit`, 625, 416);
+
+  const tex = new THREE.CanvasTexture(c);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.anisotropy = 8;
+  return tex;
+}
+
+function shadowTexture() {
+  const c = document.createElement("canvas");
+  c.width = c.height = 256;
+  const g = c.getContext("2d");
+  const grad = g.createRadialGradient(128, 128, 0, 128, 128, 128);
+  grad.addColorStop(0, "rgba(11,14,20,0.55)");
+  grad.addColorStop(0.5, "rgba(11,14,20,0.18)");
+  grad.addColorStop(1, "rgba(11,14,20,0)");
+  g.fillStyle = grad;
+  g.fillRect(0, 0, 256, 256);
+  return new THREE.CanvasTexture(c);
+}
+

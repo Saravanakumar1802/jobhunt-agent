@@ -1,4 +1,5 @@
-import { NavLink, Link, Outlet } from "react-router-dom";
+import { Suspense } from "react";
+import { NavLink, Link, Outlet, useLocation } from "react-router-dom";
 import { AlertTriangle, Cpu, Gauge, KanbanSquare, LogOut, Search } from "lucide-react";
 import Logo from "../ui/Logo";
 import { useAuth } from "../../context/AuthContext";
@@ -11,6 +12,12 @@ const NAV = [
   { to: "/app/models", label: "AI models", icon: Cpu },
   { to: "/app/status", label: "Usage", icon: Gauge },
 ];
+
+/** Index of the nav item for this path, or -1 (drives the sliding pill on the phone tab bar). */
+function activeNavIndex(pathname) {
+  const path = pathname.replace(/\/+$/, "") || "/";
+  return NAV.findIndex((n) => (n.end ? path === n.to : path === n.to || path.startsWith(`${n.to}/`)));
+}
 
 /** Shown on every page when a model tier has no working model, so the user can switch models. */
 export function ModelBanner() {
@@ -38,6 +45,8 @@ export function ModelBanner() {
 
 export default function AppShell() {
   const { user, logout } = useAuth();
+  const { pathname } = useLocation();
+  const active = activeNavIndex(pathname);
   return (
     <div className="min-h-dvh pb-24 sm:pb-0">
       <header className="sticky top-0 z-30 border-b border-line/70 bg-paper/80 backdrop-blur-xl">
@@ -69,17 +78,26 @@ export default function AppShell() {
       <ModelBanner />
 
       <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
-        <Outlet />
+        {/* Keyed by path so each page settles in; the shell stays put while a page's code loads. */}
+        <Suspense fallback={<div className="skeleton h-96" aria-hidden />}>
+          <div key={pathname} className="page-in">
+            <Outlet />
+          </div>
+        </Suspense>
       </main>
 
-      {/* Phones: a bottom tab bar within thumb reach. */}
+      {/* Phones: a bottom tab bar within thumb reach. The pill slides to the active tab. */}
       <nav aria-label="Main" className="fixed inset-x-3 bottom-3 z-30 grid grid-cols-4 rounded-[22px] bg-ink-950/95 p-1.5 shadow-2xl backdrop-blur sm:hidden"
         style={{ marginBottom: "env(safe-area-inset-bottom)" }}>
+        {active >= 0 && (
+          <span aria-hidden className="absolute inset-y-1.5 left-1.5 w-[calc((100%-0.75rem)/4)] rounded-2xl bg-white/12 transition-transform duration-500 ease-out-expo"
+            style={{ transform: `translateX(${active * 100}%)` }} />
+        )}
         {NAV.map(({ to, label, icon: Icon, end }) => (
           <NavLink key={to} to={to} end={end}
             className={({ isActive }) =>
-              `flex flex-col items-center gap-1 rounded-2xl py-2 text-[0.7rem] font-semibold transition-colors ${
-                isActive ? "bg-white/12 text-white" : "text-white/55"
+              `relative flex flex-col items-center gap-1 rounded-2xl py-2 text-[0.7rem] font-semibold transition-colors duration-300 ${
+                isActive ? "text-white" : "text-white/55"
               }`
             }>
             <Icon size={19} aria-hidden />

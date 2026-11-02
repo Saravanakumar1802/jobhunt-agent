@@ -19,7 +19,7 @@ function JobCard({ item, onDraft, onTrack, tracked, rank }) {
   const closes = shortDate(job.closes_at);
 
   return (
-    <article className="surface group relative p-5 transition-[border-color,box-shadow] duration-300 hover:border-line-strong hover:shadow-[0_18px_40px_-24px_rgb(11_14_20/0.35)] sm:p-6"
+    <article className="surface scroll-in group relative p-4 transition-[border-color,box-shadow] duration-300 hover:border-line-strong hover:shadow-[0_18px_40px_-24px_rgb(11_14_20/0.35)] sm:p-6"
       data-testid="job-card">
       <div className="flex gap-4">
         <div className="relative grid size-12 shrink-0 place-items-center overflow-hidden rounded-[14px] border border-line bg-mist font-semiwide font-bold text-ink-600">

@@ -4,7 +4,8 @@
  * orbital ring → fetched → shortlisted → read → ranked.
  *
  * Motion: Lenis smooth scroll feeds ScrollTrigger. Everything is scrubbed to scroll except
- * the one hero entrance. All of it is skipped under prefers-reduced-motion.
+ * the one hero entrance. All of it is skipped under prefers-reduced-motion, and the blur filters are
+ * left out on small screens, where re-filtering every scrolled frame costs more than it shows.
  */
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
@@ -18,6 +19,8 @@ import Logo from "../components/ui/Logo";
 import DemoThread from "../components/agent/DemoThread";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
+// Phones resize the viewport as the address bar slides away; don't recompute every trigger when that happens.
+ScrollTrigger.config({ ignoreMobileResize: true });
 const GlassCards = lazy(() => import("../components/three/GlassCards"));
 
 const STEPS = [
@@ -128,14 +131,18 @@ export default function Landing() {
       ScrollTrigger.create({ start: 40, end: "max", toggleClass: { targets: ".site-header", className: "is-scrolled" } });
 
       const mm = gsap.matchMedia();
-      mm.add("(prefers-reduced-motion: no-preference)", () => {
+      mm.add({ motion: "(prefers-reduced-motion: no-preference)", wide: "(min-width: 768px)" }, (ctx) => {
+        const { motion, wide } = ctx.conditions;
+        if (!motion) return;
+        const blur = (px) => (wide ? { filter: `blur(${px}px)` } : {});
+
         // The one timed moment: the headline rises in on load.
         gsap.from(".hero-line", { yPercent: 105, duration: 1.2, ease: "expo.out", stagger: 0.1, delay: 0.15 });
         gsap.from(".hero-fade", { opacity: 0, y: 14, duration: 1, delay: 0.7, ease: "expo.out", stagger: 0.08 });
 
         // Hero copy lifts away and defocuses as the story begins.
         gsap.to(".hero-content, .hero-cue", {
-          yPercent: -18, opacity: 0, filter: "blur(10px)", ease: "none",
+          yPercent: -18, opacity: 0, ...blur(10), ease: "none",
           scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom 55%", scrub: true },
         });
 
@@ -147,8 +154,8 @@ export default function Landing() {
           gsap.timeline({ scrollTrigger: { trigger: section, start: "top bottom", end: "bottom top", scrub: true } })
             .fromTo(card, { opacity: 0, y: 140, scale: 0.94, clipPath: "inset(22% 0% 22% 0% round 24px)" },
               { opacity: 1, y: 0, scale: 1, clipPath: "inset(0% 0% 0% 0% round 24px)", duration: 0.36, ease: "power3.out" })
-            .fromTo(inner, { y: 36, opacity: 0, filter: "blur(10px)" },
-              { y: 0, opacity: 1, filter: "blur(0px)", stagger: 0.04, duration: 0.24, ease: "power2.out" }, 0.1)
+            .fromTo(inner, { y: 36, opacity: 0, ...blur(10) },
+              { y: 0, opacity: 1, ...blur(0), stagger: 0.04, duration: 0.24, ease: "power2.out" }, 0.1)
             .to(card, { duration: 0.28 })
             .to(card, { opacity: 0, y: -140, scale: 0.96, duration: 0.36, ease: "power2.in" });
         });
@@ -186,6 +193,7 @@ export default function Landing() {
   return (
     <div ref={root} className="overflow-x-clip">
       <header className="site-header fixed inset-x-0 top-0 z-30 transition-[background-color,backdrop-filter,box-shadow] duration-500">
+        <span aria-hidden className="scroll-progress absolute inset-x-0 top-0 h-[3px] bg-linear-to-r from-signal-500 to-lime-300" />
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
           <Link to="/" aria-label="Job Hunt Copilot home"><Logo /></Link>
           <nav className="flex items-center gap-1.5 rounded-full bg-surface/70 p-1 shadow-[0_0_0_1px_var(--color-line)] backdrop-blur-xl">
@@ -198,7 +206,7 @@ export default function Landing() {
       <div ref={story} className="relative">
         {/* Absolute track spanning the story; the sticky child pins the scene and stops at the story's end. */}
         <div className="absolute inset-0">
-          <div className="sticky top-0 h-dvh">
+          <div className="sticky top-0 h-lvh">
             <Suspense fallback={null}>
               <GlassCards mode="story" progress={progress} active={storyVisible} className="h-full w-full" />
             </Suspense>
@@ -219,7 +227,7 @@ export default function Landing() {
           </div>
         </div>
 
-        <section className="hero relative z-10 mx-auto flex min-h-dvh max-w-7xl items-end px-4 pb-14 sm:px-6 lg:items-center lg:pb-0">
+        <section className="hero relative z-10 mx-auto flex min-h-svh max-w-7xl items-end px-4 pb-14 sm:px-6 lg:items-center lg:pb-0">
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-2/3 bg-linear-to-t from-paper via-paper/85 to-transparent lg:hidden" />
           <div className="hero-content relative max-w-2xl">
             <h1 className="font-wide text-[clamp(2.6rem,7vw,5.6rem)] font-bold leading-[0.92]">
@@ -247,9 +255,9 @@ export default function Landing() {
 
         <div id="how">
           {STEPS.map((s, i) => (
-            <section key={s.title} className="step relative z-10 mx-auto flex h-dvh max-w-7xl items-end px-4 pb-8 sm:px-6 lg:items-center lg:pb-0"
+            <section key={s.title} className="step relative z-10 mx-auto flex h-svh max-w-7xl items-end px-4 pb-8 sm:px-6 lg:items-center lg:pb-0"
               aria-labelledby={`step-${i}`}>
-              <div className="step-card w-full max-w-md rounded-[24px] border border-white/70 bg-surface/80 p-6 shadow-[0_30px_80px_-30px_rgb(21_41_168/0.35)] backdrop-blur-2xl sm:p-8">
+              <div className="step-card w-full max-w-md rounded-[24px] border border-white/70 bg-surface/80 p-6 shadow-[0_30px_80px_-30px_rgb(21_41_168/0.35)] backdrop-blur-md sm:p-8 md:backdrop-blur-2xl">
                 <div className="step-in flex items-center gap-3 text-sm font-semibold text-ink-500">
                   <span className="grid size-7 place-items-center rounded-full bg-ink-950 text-xs text-white">{i + 1}</span>
                   Step {i + 1} of {STEPS.length}

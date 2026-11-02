@@ -20,7 +20,7 @@ export default function Listbox({ id, label, options, active, query, onPick, onH
         return (
           <li key={o.key} id={`${id}-${i}`} role="option" aria-selected={i === active} ref={i === active ? activeRef : null}
             onMouseDown={(e) => e.preventDefault()} onClick={() => onPick(i)} onMouseEnter={() => onHover(i)}
-            className={`flex cursor-pointer items-center justify-between gap-3 rounded-xl px-3 py-2 text-sm ${
+            className={`flex cursor-pointer items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-sm max-sm:scroll-mb-28 sm:py-2 ${
               i === active ? "bg-mist" : ""
             } ${o.custom ? "border-t border-line text-ink-600" : ""}`}>
             {o.custom ? (

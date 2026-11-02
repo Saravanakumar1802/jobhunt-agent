@@ -318,11 +318,13 @@ class WebGLBoundary extends Component {
 
 export default function GlassCards({ mode = "fan", progress, active = true, className = "" }) {
   const reduced = typeof window !== "undefined" && window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+  // Glass transmission renders the scene twice per frame; phones get a lower pixel-ratio cap to stay smooth.
+  const touch = typeof window !== "undefined" && window.matchMedia?.("(pointer: coarse)").matches;
   return (
     <div className={className} aria-hidden>
       <WebGLBoundary>
         <Canvas
-          dpr={[1, 1.75]}
+          dpr={[1, touch ? 1.5 : 1.75]}
           camera={{ position: [0, 0.35, mode === "fan" ? 4.6 : 7.8], fov: 35 }}
           gl={{ antialias: true, powerPreference: "high-performance" }}
           frameloop={active ? (reduced ? "demand" : "always") : "never"}

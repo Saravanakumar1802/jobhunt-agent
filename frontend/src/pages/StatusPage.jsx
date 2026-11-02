@@ -29,7 +29,7 @@ export default function StatusPage() {
         </p>
       </div>
 
-      <section className="surface p-6" aria-labelledby="src-h">
+      <section className="surface scroll-in p-5 sm:p-6" aria-labelledby="src-h">
         <h2 id="src-h" className="text-xl font-bold">Job searches left this month</h2>
         <ul className="mt-5 space-y-5">
           {sources.map((s) => (
@@ -49,56 +49,60 @@ export default function StatusPage() {
         </ul>
       </section>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-4 sm:gap-6 md:grid-cols-3">
         {[
           ["AI calls, last 24 hours", llm.calls_24h],
           ["Tokens, last 24 hours", llm.tokens_24h.toLocaleString()],
           ["Searches served from cache", `${Math.round(searches.cache_hit_rate * 100)}%`],
         ].map(([label, value]) => (
-          <div key={label} className="surface p-6">
+          <div key={label} className="surface scroll-in p-5 sm:p-6">
             <p className="text-sm text-ink-500">{label}</p>
             <p className="mt-2 font-semiwide text-4xl font-bold">{value}</p>
           </div>
         ))}
       </div>
 
-      <section className="surface p-6" aria-labelledby="models-h">
+      <section className="surface scroll-in p-5 sm:p-6" aria-labelledby="models-h">
         <h2 id="models-h" className="text-xl font-bold">Which model answered</h2>
         {Object.keys(llm.by_model).length === 0 ? (
           <p className="mt-3 text-ink-500">No AI calls yet in the last 24 hours.</p>
         ) : (
-          <table className="mt-4 w-full text-left text-sm">
-            <thead className="text-ink-400"><tr><th className="py-2 font-semibold">Model</th><th className="py-2 text-right font-semibold">Calls</th></tr></thead>
-            <tbody>
-              {Object.entries(llm.by_model).map(([m, n]) => (
-                <tr key={m} className="border-t border-line"><td className="py-2.5">{m}</td><td className="py-2.5 text-right tabular-nums">{n}</td></tr>
-              ))}
-            </tbody>
-          </table>
+          <div className="-mx-1 mt-4 overflow-x-auto px-1">
+            <table className="w-full text-left text-sm">
+              <thead className="text-ink-400"><tr><th className="py-2 font-semibold">Model</th><th className="py-2 text-right font-semibold">Calls</th></tr></thead>
+              <tbody>
+                {Object.entries(llm.by_model).map(([m, n]) => (
+                  <tr key={m} className="border-t border-line"><td className="break-all py-2.5 pr-4">{m}</td><td className="py-2.5 text-right tabular-nums">{n}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
         <p className="mt-4 text-sm text-ink-400">{llm.fallback_calls_24h} calls needed a backup model because the first choice was busy.</p>
       </section>
 
-      <section className="surface p-6" aria-labelledby="recent-h">
+      <section className="surface scroll-in p-5 sm:p-6" aria-labelledby="recent-h">
         <h2 id="recent-h" className="text-xl font-bold">Recent searches</h2>
         {searches.recent.length === 0 ? (
           <p className="mt-3 text-ink-500">No searches yet.</p>
         ) : (
-          <table className="mt-4 w-full text-left text-sm">
-            <thead className="text-ink-400">
-              <tr><th className="py-2 font-semibold">When</th><th className="py-2 font-semibold">Source</th><th className="py-2 text-right font-semibold">Jobs</th><th className="py-2 text-right font-semibold">Time</th></tr>
-            </thead>
-            <tbody>
-              {searches.recent.map((s, i) => (
-                <tr key={i} className="border-t border-line">
-                  <td className="py-2.5">{new Date(s.ts).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}</td>
-                  <td className="py-2.5">{s.cached ? "cache" : s.demo ? "demo" : s.source}</td>
-                  <td className="py-2.5 text-right tabular-nums">{s.ranked}/{s.fetched}</td>
-                  <td className="py-2.5 text-right tabular-nums">{(s.elapsed_ms / 1000).toFixed(1)}s</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div className="-mx-1 mt-4 overflow-x-auto px-1">
+            <table className="w-full min-w-[22rem] text-left text-sm">
+              <thead className="text-ink-400">
+                <tr><th className="py-2 font-semibold">When</th><th className="py-2 font-semibold">Source</th><th className="py-2 text-right font-semibold">Jobs</th><th className="py-2 text-right font-semibold">Time</th></tr>
+              </thead>
+              <tbody>
+                {searches.recent.map((s, i) => (
+                  <tr key={i} className="border-t border-line">
+                    <td className="py-2.5">{new Date(s.ts).toLocaleString("en-IN", { dateStyle: "medium", timeStyle: "short" })}</td>
+                    <td className="py-2.5">{s.cached ? "cache" : s.demo ? "demo" : s.source}</td>
+                    <td className="py-2.5 text-right tabular-nums">{s.ranked}/{s.fetched}</td>
+                    <td className="py-2.5 text-right tabular-nums">{(s.elapsed_ms / 1000).toFixed(1)}s</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </section>
     </div>

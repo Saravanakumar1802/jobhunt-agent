@@ -40,7 +40,7 @@ function TierEditor({ tier, rows, chain, setChain, suggestions, isAdmin, onTest,
   const allSuggestions = Object.entries(suggestions).flatMap(([p, list]) => list.map((m) => ({ p, m })));
 
   return (
-    <section className="surface p-5 sm:p-6" aria-labelledby={`tier-${tier}`}>
+    <section className="surface scroll-in min-w-0 p-5 sm:p-6" aria-labelledby={`tier-${tier}`}>
       <h2 id={`tier-${tier}`} className="text-xl font-bold">{TIER_INFO[tier].title}</h2>
       <p className="mt-1 text-sm text-ink-500">{TIER_INFO[tier].body} Tried top to bottom; the next one takes over automatically.</p>
 

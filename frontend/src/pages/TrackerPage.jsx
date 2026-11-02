@@ -52,7 +52,7 @@ export default function TrackerPage() {
       {isLoading ? (
         <div className="mt-8 grid gap-4 md:grid-cols-4">{COLUMNS.map((c) => <div key={c.key} className="skeleton h-60" />)}</div>
       ) : data.length === 0 ? (
-        <div className="surface mt-8 p-10 text-center">
+        <div className="surface mt-8 p-6 text-center sm:p-10">
           <h2 className="text-xl font-bold">Nothing saved yet</h2>
           <p className="mt-2 text-ink-500">Run a search and press Save on any job to track it here.</p>
         </div>
@@ -61,7 +61,7 @@ export default function TrackerPage() {
           {COLUMNS.map((c) => {
             const items = data.filter((t) => t.status === c.key);
             return (
-              <section key={c.key} aria-labelledby={`col-${c.key}`} className="surface p-4">
+              <section key={c.key} aria-labelledby={`col-${c.key}`} className="surface scroll-in p-4">
                 <h2 id={`col-${c.key}`} className="mb-3 flex items-center gap-2 font-bold">
                   <span className={`size-2.5 rounded-full ${c.accent}`} aria-hidden />
                   {c.label}
